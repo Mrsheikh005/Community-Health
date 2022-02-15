@@ -10,8 +10,8 @@ export default class OnBoardingScreens extends Component {
 			<View style={{ flex: 1 }}>
 				<Onboarding
 					bottomBarHighlight={false}
-					onSkip={() => navigation.replace('Login')}
-					onDone={() => navigation.replace('Login')}
+					onSkip={() => navigation.replace('WelcomeScreen')}
+					onDone={() => navigation.replace('WelcomeScreen')}
 					pages={[
 						{
 							backgroundColor: '#EFCDFF',
