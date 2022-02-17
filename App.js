@@ -1,19 +1,24 @@
-import { Text, View } from 'react-native';
 import React, { Component, useState, useEffect } from 'react';
+// Navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+// Auth_Screens
 import Splash from './src/auth_screens/Splash';
 import OnBoardingScreens from './src/auth_screens/OnBoardingScreens';
 import Login from './src/auth_screens/Login';
 import SignUp from './src/auth_screens/SignUp';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import ForgotPassword from './src/auth_screens/ForgotPassword';
 import OTPScreen from './src/auth_screens/OTPScreen';
 import CreateNewPassword from './src/auth_screens/CreateNewPassword';
-import Zunair from './src/auth_screens/Zunair';
 import WelcomeScreen from './src/auth_screens/WelcomeScreen';
 import Congrats from './src/auth_screens/Congrats';
 import NotAvailable from './src/auth_screens/NotAvailable';
+// Home_Screens
+import Services from './src/home_screens/Services';
+import AvailableMechanics from './src/home_screens/AvailableMechanics';
+import MechanicView from './src/reuseables/MechanicView';
+// Libraries
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,7 +46,9 @@ const App = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
-				{/* <Stack.Screen name="Zunair" component={Zunair} /> */}
+				<Stack.Screen name="Services" component={Services} />
+				<Stack.Screen name="AvailableMechanics" component={AvailableMechanics} />
+				<Stack.Screen name="MechanicView" component={MechanicView} />
 
 				<Stack.Screen name="Splash" component={Splash} />
 				<Stack.Screen name="OnBoardingScreens" component={OnBoardingScreens} />

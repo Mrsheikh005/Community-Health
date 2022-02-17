@@ -6,7 +6,7 @@ import Line from '../assets/images/icons/line.svg'
 import languages from '../assets/languages/English.json'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import DetailCard from './DetailCard'
-import { Orders } from '../data/OrderData'
+// import { Orders } from '../data/OrderData'
 export default class BottomBox extends Component {
     handleViewAll = () => {
         this.props.navigation.navigate('ViewAllOrders',{item:Orders})
@@ -34,14 +34,14 @@ export default class BottomBox extends Component {
                     </View>
                     <FlatList
                         horizontal
-                        data={Orders}
+                      
                         keyExtractor={(item, index) => {
                             return index;
                         }}
                         renderItem={({ item }) => (
                             <Animatable.View
                                 animation="slideInLeft">
-                                <DetailCard order={item} onPress={() => { this.props.navigation.navigate('OrderDetails', { item: item }) }} />
+                                <DetailCard />
                             </Animatable.View>
                         )
                         }
