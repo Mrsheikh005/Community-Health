@@ -47,7 +47,6 @@ const App = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
-				<Stack.Screen name="MechanicInfo" component={MechanicInfo} />
 				<Stack.Screen name="Splash" component={Splash} />
 				<Stack.Screen name="OnBoardingScreens" component={OnBoardingScreens} />
 				<Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
@@ -61,6 +60,7 @@ const App = () => {
 				<Stack.Screen name="Services" component={Services} />
 				<Stack.Screen name="AvailableMechanics" component={AvailableMechanics} />
 				<Stack.Screen name="MechanicView" component={MechanicView} />
+				<Stack.Screen name="MechanicInfo" component={MechanicInfo} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
