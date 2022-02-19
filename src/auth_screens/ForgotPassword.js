@@ -3,7 +3,7 @@ import { ScrollView, Text, View, Image, } from 'react-native';
 import IconHeader from '../reuseables/IconHeader';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { primaryColor, container, headings, Colors, secondryColor } from '../utils/Styles';
+import { primaryColor, container, headings, Colors, white } from '../utils/Styles';
 import languages from '../assets/languages/English.json';
 import Btn1 from '../reuseables/Btn1';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -42,8 +42,8 @@ export default class ForgotPassword extends Component {
 							renderLoadingView()
 						) : (
 							<Btn1
-								lableStyle={{ color: secondryColor }}
-								lable={languages.getcode}
+							lableStyle={{ ...headings.h6M, color: white }}
+							lable={languages.getcode}
 								onPress={() => this.props.navigation.navigate('OTPScreen')}
 							/>
 						)}

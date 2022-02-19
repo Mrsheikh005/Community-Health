@@ -3,7 +3,7 @@ import { ScrollView, Text, View, Image } from 'react-native';
 import IconHeader from '../reuseables/IconHeader';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { primaryColor, container, headings, Colors, secondryColor } from '../utils/Styles';
+import { primaryColor, container, headings, Colors , white } from '../utils/Styles';
 import languages from '../assets/languages/English.json';
 import Btn1 from '../reuseables/Btn1';
 import { InputField } from '../reuseables/InputField';
@@ -60,7 +60,7 @@ export default class CreateNewPassword extends Component {
 
 						<Btn1
 							containerStyle={{ marginTop: 10 }}
-							lableStyle={{ color: secondryColor }}
+							lableStyle={{ ...headings.h6M,color: white }}
 							lable={languages.createpass}
 							onPress={() => {
 								this.props.navigation.navigate('Login');

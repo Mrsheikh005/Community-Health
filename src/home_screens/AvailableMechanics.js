@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, TouchableOpacity, Image, FlatList } from 'react-native';
-import { container, headings, primaryColor, Colors, white } from '../utils/Styles';
+import { Text, View, TouchableOpacity, Image, FlatList } from 'react-native';
+import { primaryColor } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
-import languages from '../assets/languages/English.json';
-import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { InputField } from '../reuseables/InputField';
-import Btn1 from '../reuseables/Btn1';
-import MechanicView from '../reuseables/MechanicView';
 import StarRating from 'react-native-star-rating';
 
 export default class AvailableMechanics extends Component {
@@ -114,8 +109,8 @@ export default class AvailableMechanics extends Component {
 							selectedStar={(rating) => this.onStarRatingPress(rating)}
 							starSize={20}
 							halfStarEnabled={true}
-							containerStyle={{ marginHorizontal: '15%', top: '1%' }}
-							starStyle={{ color: 'yellow' }}
+							containerStyle={{ marginHorizontal: '15%', top: '1%', left: 10 }}
+							starStyle={{ color: 'orange' }}
 						/>
 					</View>
 				</TouchableOpacity>
@@ -130,7 +125,7 @@ export default class AvailableMechanics extends Component {
 	}
 
 	render() {
-		const { Data, starCount } = this.state;
+		const { Data } = this.state;
 		return (
 			<View style={{ flex: 1, backgroundColor: 'white' }}>
 				<IconHeader

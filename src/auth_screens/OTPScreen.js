@@ -61,7 +61,7 @@ export default class OTPScreen extends Component {
 						<Btn1
 							containerStyle={{ marginBottom: 5 }}
 							lable={languages.confirm}
-							lableStyle={{ color: white }}
+							lableStyle={{ ...headings.h6M,color: white }}
 							onPress={() => {
 								this.props.navigation.navigate('CreateNewPassword');
 							}}

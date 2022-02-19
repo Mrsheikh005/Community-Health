@@ -29,7 +29,8 @@ export default class Congrats extends Component {
                             containerStyle={{ elevation: 8, shadowColor: primaryColor, backgroundColor: white }}
                              icon={<Entypo size={25} name="location-pin" color={primaryColor} />}
                         />
-                        <Btn1 lableStyle={{ color: secondryColor }} lable={languages.login}
+                        <Btn1	lableStyle={{ ...headings.h6M, color: white }}
+								lable={languages.login}
                             onPress={() => { this.props.navigation.navigate("Login") }}
                         />
                     </View>

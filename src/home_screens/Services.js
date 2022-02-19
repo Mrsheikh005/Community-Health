@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { container, headings, primaryColor, Colors, white } from '../utils/Styles';
+import { primaryColor } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
-import languages from '../assets/languages/English.json';
-import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { InputField } from '../reuseables/InputField';
-import Btn1 from '../reuseables/Btn1';
 
 export default class Services extends Component {
 	render() {
@@ -26,23 +22,37 @@ export default class Services extends Component {
 					}
 				/>
 				<View style={{ marginTop: '10%', marginStart: '10%', width: '50%' }}>
-					<Text style={{ fontSize: 16, fontWeight: 'bold', letterSpacing: 0.8, color: '#68397E'}}>Good Evening!</Text>
-					<Text style={{ fontSize: 15, fontWeight: 'bold', letterSpacing: 1, color: '#68397E' }}>We are glad to see you!</Text>
+					<Text style={{ fontSize: 16, fontWeight: 'bold', letterSpacing: 0.8, color: '#68397E' }}>
+						Good Evening!
+					</Text>
+					<Text style={{ fontSize: 15, fontWeight: 'bold', letterSpacing: 1, color: '#68397E' }}>
+						We are glad to see you!
+					</Text>
 				</View>
-				<View style={{  height: '10%', marginTop: '5%', alignItems: 'center' }}>
-					<Text style={{ fontSize: 18, fontWeight: 'bold', letterSpacing: 0.8, color:'black' }}>
+				<View style={{ height: '10%', marginTop: '5%', alignItems: 'center' }}>
+					<Text style={{ fontSize: 18, fontWeight: 'bold', letterSpacing: 0.8, color: 'black' }}>
 						What type of Vehicle Services
 					</Text>
-					<Text style={{ fontSize: 18, fontWeight: 'bold', letterSpacing: 1 ,  color:'black'}}>are you looking for?</Text>
+					<Text style={{ fontSize: 18, fontWeight: 'bold', letterSpacing: 1, color: 'black' }}>
+						are you looking for?
+					</Text>
 				</View>
- 
+
 				<ScrollView
 					contentContainerStyle={{ flexGrow: 1 }}
 					showsVerticalScrollIndicator={false}
 					bouncesZoom={true}
 				>
 					<TouchableOpacity
-						style={{ backgroundColor: '#F9ECFF', marginHorizontal: 20, borderRadius: 8, paddingVertical: 20 }}
+						onPress={() => {
+							this.props.navigation.navigate('AvailableMechanics');
+						}}
+						style={{
+							backgroundColor: '#F9ECFF',
+							marginHorizontal: 20,
+							borderRadius: 8,
+							paddingVertical: 20
+						}}
 					>
 						<View style={{ alignSelf: 'center' }}>
 							<Image source={require('../assets/images/services1.png')} />
@@ -50,7 +60,16 @@ export default class Services extends Component {
 					</TouchableOpacity>
 
 					<TouchableOpacity
-						style={{ backgroundColor: '#F9ECFF', marginHorizontal: 20, borderRadius: 8, paddingVertical: 20, marginTop:'5%' }}
+						onPress={() => {
+							this.props.navigation.navigate('AvailableMechanics');
+						}}
+						style={{
+							backgroundColor: '#F9ECFF',
+							marginHorizontal: 20,
+							borderRadius: 8,
+							paddingVertical: 20,
+							marginTop: '5%'
+						}}
 					>
 						<View style={{ alignSelf: 'center' }}>
 							<Image source={require('../assets/images/services1.png')} />
@@ -58,7 +77,16 @@ export default class Services extends Component {
 					</TouchableOpacity>
 
 					<TouchableOpacity
-						style={{ backgroundColor: '#F9ECFF', marginHorizontal: 20, borderRadius: 8, paddingVertical: 20, marginTop:'5%' }}
+						onPress={() => {
+							this.props.navigation.navigate('AvailableMechanics');
+						}}
+						style={{
+							backgroundColor: '#F9ECFF',
+							marginHorizontal: 20,
+							borderRadius: 8,
+							paddingVertical: 20,
+							marginTop: '5%'
+						}}
 					>
 						<View style={{ alignSelf: 'center' }}>
 							<Image source={require('../assets/images/services1.png')} />
@@ -66,7 +94,16 @@ export default class Services extends Component {
 					</TouchableOpacity>
 
 					<TouchableOpacity
-						style={{ backgroundColor: '#F9ECFF', marginHorizontal: 20, borderRadius: 8, paddingVertical: 20, marginTop:'5%' }}
+						onPress={() => {
+							this.props.navigation.navigate('AvailableMechanics');
+						}}
+						style={{
+							backgroundColor: '#F9ECFF',
+							marginHorizontal: 20,
+							borderRadius: 8,
+							paddingVertical: 20,
+							marginTop: '5%'
+						}}
 					>
 						<View style={{ alignSelf: 'center' }}>
 							<Image source={require('../assets/images/services1.png')} />

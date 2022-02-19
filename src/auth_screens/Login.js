@@ -68,7 +68,7 @@ export default class Login extends Component {
 							<Btn1
 								lableStyle={{ ...headings.h6M, color: white }}
 								lable={languages.login}
-								onPress={() => this.props.navigation.navigate('NotAvailable')}
+								onPress={() => this.props.navigation.navigate('Services')}
 							/>
 						</View>
 					</View>

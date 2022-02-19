@@ -17,6 +17,7 @@ import NotAvailable from './src/auth_screens/NotAvailable';
 import Services from './src/home_screens/Services';
 import AvailableMechanics from './src/home_screens/AvailableMechanics';
 import MechanicView from './src/reuseables/MechanicView';
+import MechanicInfo from './src/home_screens/MechanicInfo';
 // Libraries
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -46,10 +47,7 @@ const App = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
-				<Stack.Screen name="Services" component={Services} />
-				<Stack.Screen name="AvailableMechanics" component={AvailableMechanics} />
-				<Stack.Screen name="MechanicView" component={MechanicView} />
-
+				<Stack.Screen name="MechanicInfo" component={MechanicInfo} />
 				<Stack.Screen name="Splash" component={Splash} />
 				<Stack.Screen name="OnBoardingScreens" component={OnBoardingScreens} />
 				<Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
@@ -60,6 +58,9 @@ const App = () => {
 				<Stack.Screen name="CreateNewPassword" component={CreateNewPassword} />
 				<Stack.Screen name="Congrats" component={Congrats} />
 				<Stack.Screen name="NotAvailable" component={NotAvailable} />
+				<Stack.Screen name="Services" component={Services} />
+				<Stack.Screen name="AvailableMechanics" component={AvailableMechanics} />
+				<Stack.Screen name="MechanicView" component={MechanicView} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
