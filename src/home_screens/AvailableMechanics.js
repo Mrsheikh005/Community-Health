@@ -90,6 +90,7 @@ export default class AvailableMechanics extends Component {
 		return (
 			<View style={{ flex: 1, backgroundColor: 'white', top: 10, marginBottom: 10 }}>
 				<TouchableOpacity
+					onPress={() => {this.props.navigation.navigate('MechanicInfo')}}
 					style={{ backgroundColor: '#F9ECFF', marginHorizontal: 20, borderRadius: 8, paddingVertical: 30 }}
 				>
 					<View style={{ flexDirection: 'row' }}>
