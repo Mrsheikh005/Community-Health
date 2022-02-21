@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, Image,SafeAreaView} from 'react-native';
 import { primaryColor } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -7,7 +7,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 export default class Services extends Component {
 	render() {
 		return (
-			<View style={{ flex: 1, backgroundColor: 'white' }}>
+			<SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
 				<IconHeader
 					onleftPress={() => {
 						this.props.navigation.goBack();
@@ -110,7 +110,7 @@ export default class Services extends Component {
 						</View>
 					</TouchableOpacity>
 				</ScrollView>
-			</View>
+			</SafeAreaView>
 		);
 	}
 }

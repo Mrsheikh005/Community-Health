@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, Image, FlatList } from 'react-native';
+import { Text, View, TouchableOpacity, Image, FlatList,SafeAreaView } from 'react-native';
 import { primaryColor } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -78,7 +78,7 @@ export default class MechanicInfo extends Component {
 	render() {
 		const { Data } = this.state;
 		return (
-			<View style={{ flex: 1, backgroundColor: 'white' }}>
+			<SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
 				<IconHeader
 					onleftPress={() => {
 						this.props.navigation.goBack();
@@ -165,7 +165,7 @@ export default class MechanicInfo extends Component {
 								</View>
 
 								<View>
-									<TouchableOpacity
+									<TouchableOpacity onPress={this.props.navigation.navigate('BookingMechanic')}
 										style={{
 											padding: 15,
 											paddingLeft: 50,
@@ -196,7 +196,7 @@ export default class MechanicInfo extends Component {
 						</View>
 					</View>
 				</View>
-			</View>
+			</SafeAreaView>
 		);
 	}
 }

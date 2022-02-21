@@ -19,10 +19,12 @@
     "react-native": "0.67.1",
     "react-native-bouncy-checkbox": "^2.1.10",
     "react-native-modal": "^13.0.0",
+    "react-native-multiple-select": "^0.5.7",
     "react-native-onboarding-swiper": "^1.1.4",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.2",
     "react-native-star-rating": "^1.1.0",
+    "react-native-switch-selector": "^2.1.4",
     "react-native-vector-icons": "^9.1.0"
   },
   "devDependencies": {
