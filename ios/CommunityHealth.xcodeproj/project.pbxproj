@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* VBATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* VBATests.m */; };
-		0E4D8C54A029B2717D73289A /* libPods-VBA-VBATests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 549E8856589DB7840E3200B6 /* libPods-VBA-VBATests.a */; };
+		00E356F31AD99517003FC87E /* CommunityHealthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CommunityHealthTests.m */; };
+		0E4D8C54A029B2717D73289A /* libPods-CommunityHealth-CommunityHealthTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 549E8856589DB7840E3200B6 /* libPods-CommunityHealth-CommunityHealthTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		56C24F98D91862E6F9450D41 /* libPods-VBA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D7F9901F069FB0191D6E42 /* libPods-VBA.a */; };
+		56C24F98D91862E6F9450D41 /* libPods-CommunityHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D7F9901F069FB0191D6E42 /* libPods-CommunityHealth.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,37 +20,37 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = VBA;
+			remoteInfo = CommunityHealth;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* VBATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VBATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* CommunityHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommunityHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* VBATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBATests.m; sourceTree = "<group>"; };
-		0808711E1876853A07708A5B /* Pods-VBA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBA.release.xcconfig"; path = "Target Support Files/Pods-VBA/Pods-VBA.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* CommunityHealthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityHealthTests.m; sourceTree = "<group>"; };
+		0808711E1876853A07708A5B /* Pods-CommunityHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityHealth.release.xcconfig"; path = "Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth.release.xcconfig"; sourceTree = "<group>"; };
 		0AD70DA0E8FC42B1B68D7759 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		0F7818507673A62AD4A24E43 /* Pods-VBA-VBATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBA-VBATests.release.xcconfig"; path = "Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* VBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = VBA/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = VBA/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = VBA/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = VBA/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = VBA/main.m; sourceTree = "<group>"; };
+		0F7818507673A62AD4A24E43 /* Pods-CommunityHealth-CommunityHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityHealth-CommunityHealthTests.release.xcconfig"; path = "Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* CommunityHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CommunityHealth/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CommunityHealth/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CommunityHealth/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CommunityHealth/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CommunityHealth/main.m; sourceTree = "<group>"; };
 		1F4F3CD3C6734AF68E990ABB /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		3457F48F4614F84E77704075 /* Pods-VBA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBA.debug.xcconfig"; path = "Target Support Files/Pods-VBA/Pods-VBA.debug.xcconfig"; sourceTree = "<group>"; };
+		3457F48F4614F84E77704075 /* Pods-CommunityHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityHealth.debug.xcconfig"; path = "Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		38B41727B01A48EE9F1688CA /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		414CC9DF2F154CE9808E3670 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		44D7F9901F069FB0191D6E42 /* libPods-VBA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VBA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D7F9901F069FB0191D6E42 /* libPods-CommunityHealth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommunityHealth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1F08C53E374AA08C93A5D5 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		549E8856589DB7840E3200B6 /* libPods-VBA-VBATests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VBA-VBATests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		549E8856589DB7840E3200B6 /* libPods-CommunityHealth-CommunityHealthTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommunityHealth-CommunityHealthTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67ADD99022A24D6FB0A96787 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		70A27981E418404DB577AA0D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = VBA/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CommunityHealth/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A7B5FCB439C4E779CABF01F /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		AAC9D194CDBB4824AF2BF6F7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		B572883D8D0948B8AC26B7D7 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		B75ECBDB149E2B78B55D31DD /* Pods-VBA-VBATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VBA-VBATests.debug.xcconfig"; path = "Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests.debug.xcconfig"; sourceTree = "<group>"; };
+		B75ECBDB149E2B78B55D31DD /* Pods-CommunityHealth-CommunityHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityHealth-CommunityHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3AC6D3D1CD6429AA0625709 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		D60771A1BA904EFA81664BE3 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		E064E3F9982A442A91407F95 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4D8C54A029B2717D73289A /* libPods-VBA-VBATests.a in Frameworks */,
+				0E4D8C54A029B2717D73289A /* libPods-CommunityHealth-CommunityHealthTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,20 +73,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C24F98D91862E6F9450D41 /* libPods-VBA.a in Frameworks */,
+				56C24F98D91862E6F9450D41 /* libPods-CommunityHealth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* VBATests */ = {
+		00E356EF1AD99517003FC87E /* CommunityHealthTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* VBATests.m */,
+				00E356F21AD99517003FC87E /* CommunityHealthTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = VBATests;
+			path = CommunityHealthTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -97,7 +97,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* VBA */ = {
+		13B07FAE1A68108700A75B9A /* CommunityHealth */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -107,16 +107,16 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = VBA;
+			name = CommunityHealth;
 			sourceTree = "<group>";
 		};
 		247AD4E104D6EF0064346C30 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3457F48F4614F84E77704075 /* Pods-VBA.debug.xcconfig */,
-				0808711E1876853A07708A5B /* Pods-VBA.release.xcconfig */,
-				B75ECBDB149E2B78B55D31DD /* Pods-VBA-VBATests.debug.xcconfig */,
-				0F7818507673A62AD4A24E43 /* Pods-VBA-VBATests.release.xcconfig */,
+				3457F48F4614F84E77704075 /* Pods-CommunityHealth.debug.xcconfig */,
+				0808711E1876853A07708A5B /* Pods-CommunityHealth.release.xcconfig */,
+				B75ECBDB149E2B78B55D31DD /* Pods-CommunityHealth-CommunityHealthTests.debug.xcconfig */,
+				0F7818507673A62AD4A24E43 /* Pods-CommunityHealth-CommunityHealthTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				44D7F9901F069FB0191D6E42 /* libPods-VBA.a */,
-				549E8856589DB7840E3200B6 /* libPods-VBA-VBATests.a */,
+				44D7F9901F069FB0191D6E42 /* libPods-CommunityHealth.a */,
+				549E8856589DB7840E3200B6 /* libPods-CommunityHealth-CommunityHealthTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,9 +164,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* VBA */,
+				13B07FAE1A68108700A75B9A /* CommunityHealth */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* VBATests */,
+				00E356EF1AD99517003FC87E /* CommunityHealthTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				3F2B1B78519E46F9AC926213 /* Resources */,
@@ -180,8 +180,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* VBA.app */,
-				00E356EE1AD99517003FC87E /* VBATests.xctest */,
+				13B07F961A680F5B00A75B9A /* CommunityHealth.app */,
+				00E356EE1AD99517003FC87E /* CommunityHealthTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,9 +189,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* VBATests */ = {
+		00E356ED1AD99517003FC87E /* CommunityHealthTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "VBATests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CommunityHealthTests" */;
 			buildPhases = (
 				D98F1E38B118D803BADF566C /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -205,14 +205,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = VBATests;
-			productName = VBATests;
-			productReference = 00E356EE1AD99517003FC87E /* VBATests.xctest */;
+			name = CommunityHealthTests;
+			productName = CommunityHealthTests;
+			productReference = 00E356EE1AD99517003FC87E /* CommunityHealthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* VBA */ = {
+		13B07F861A680F5B00A75B9A /* CommunityHealth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "VBA" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CommunityHealth" */;
 			buildPhases = (
 				A2620F0900694E1B4C5521B5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -227,9 +227,9 @@
 			);
 			dependencies = (
 			);
-			name = VBA;
-			productName = VBA;
-			productReference = 13B07F961A680F5B00A75B9A /* VBA.app */;
+			name = CommunityHealth;
+			productName = CommunityHealth;
+			productReference = 13B07F961A680F5B00A75B9A /* CommunityHealth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +249,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "VBA" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CommunityHealth" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -262,8 +262,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* VBA */,
-				00E356ED1AD99517003FC87E /* VBATests */,
+				13B07F861A680F5B00A75B9A /* CommunityHealth */,
+				00E356ED1AD99517003FC87E /* CommunityHealthTests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,15 +306,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA/Pods-VBA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA/Pods-VBA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VBA/Pods-VBA-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A2620F0900694E1B4C5521B5 /* [CP] Check Pods Manifest.lock */ = {
@@ -332,7 +332,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VBA-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CommunityHealth-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -345,15 +345,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA/Pods-VBA-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA/Pods-VBA-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VBA/Pods-VBA-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth/Pods-CommunityHealth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6DC50CF5D51125840713F71 /* [CP] Embed Pods Frameworks */ = {
@@ -362,15 +362,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D98F1E38B118D803BADF566C /* [CP] Check Pods Manifest.lock */ = {
@@ -388,7 +388,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VBA-VBATests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CommunityHealth-CommunityHealthTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -401,15 +401,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VBA-VBATests/Pods-VBA-VBATests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunityHealth-CommunityHealthTests/Pods-CommunityHealth-CommunityHealthTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -438,7 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* VBATests.m in Sources */,
+				00E356F31AD99517003FC87E /* CommunityHealthTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +456,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* VBA */;
+			target = 13B07F861A680F5B00A75B9A /* CommunityHealth */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -464,14 +464,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B75ECBDB149E2B78B55D31DD /* Pods-VBA-VBATests.debug.xcconfig */;
+			baseConfigurationReference = B75ECBDB149E2B78B55D31DD /* Pods-CommunityHealth-CommunityHealthTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = VBATests/Info.plist;
+				INFOPLIST_FILE = CommunityHealthTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,17 +485,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VBA.app/VBA";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommunityHealth.app/CommunityHealth";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F7818507673A62AD4A24E43 /* Pods-VBA-VBATests.release.xcconfig */;
+			baseConfigurationReference = 0F7818507673A62AD4A24E43 /* Pods-CommunityHealth-CommunityHealthTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = VBATests/Info.plist;
+				INFOPLIST_FILE = CommunityHealthTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,19 +509,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VBA.app/VBA";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommunityHealth.app/CommunityHealth";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3457F48F4614F84E77704075 /* Pods-VBA.debug.xcconfig */;
+			baseConfigurationReference = 3457F48F4614F84E77704075 /* Pods-CommunityHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = VBA/Info.plist;
+				INFOPLIST_FILE = CommunityHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,7 +532,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = VBA;
+				PRODUCT_NAME = CommunityHealth;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -541,12 +541,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0808711E1876853A07708A5B /* Pods-VBA.release.xcconfig */;
+			baseConfigurationReference = 0808711E1876853A07708A5B /* Pods-CommunityHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = VBA/Info.plist;
+				INFOPLIST_FILE = CommunityHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -557,7 +557,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = VBA;
+				PRODUCT_NAME = CommunityHealth;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -689,7 +689,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "VBATests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CommunityHealthTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -698,7 +698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "VBA" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CommunityHealth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -707,7 +707,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "VBA" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "CommunityHealth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
