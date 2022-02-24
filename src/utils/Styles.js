@@ -1,7 +1,7 @@
 import { Platform, StyleSheet } from 'react-native';
 
-const primaryColor = '#68397E'
-const secondryColor = '#FFFFFF'
+const primaryColor = '#2dd24c'
+const secondryColor = '#0c6d9d'
 const textColor = "#606060"
 const textColorDim = "#BBBBBB"
 const transparent = "#00000000"
@@ -22,7 +22,7 @@ const container = StyleSheet.create({
     center: {
         flex: 1,
     },
-    empty: { flex: 1, backgroundColor: secondryColor },
+    empty: { flex: 1, backgroundColor:'white' },
     roundFormBG: {
         flex: 1, paddingVertical: 30,
         borderTopStartRadius: 30, borderTopEndRadius: 30,

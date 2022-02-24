@@ -5,14 +5,14 @@ class Splash extends Component {
 	constructor(props) {
 		super(props);
 		setTimeout(() => {
-			this.props.navigation.navigate('OnBoardingScreens');
-		}, 2000);
+			this.props.navigation.navigate('WelcomeScreen');
+		}, 12000);
 	}
 	render() {
 		return (
 			<View style={styles.container}>
 				<View style={styles.item}>
-					<Image source={require('../assets/images/VBA.png')} />
+					<Image source={require('../assets/images/Logo.png')} />
 				</View>
 			</View>
 		);
@@ -23,11 +23,13 @@ export default Splash;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#EFCDFF'
+		backgroundColor: 'white'
 	},
 	item: {
 		flex: 1,
 		justifyContent: 'center',
-		alignItems: 'center'
+		alignItems: 'center',
+		
+		
 	}
 });

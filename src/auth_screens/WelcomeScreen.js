@@ -17,7 +17,7 @@ export default class WelcomeScreen extends Component {
 				<ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
 					<View style={{ flex: 1, justifyContent: 'center' }}>
 						<View style={{ alignItems: 'center' }}>
-							<Image source={require('../assets/images/VBA.png')} />
+							<Image source={require('../assets/images/Logo.png')} />
 							<Text style={{ paddingTop: 25, ...headings.h7M }}>{languages.heygoodtoseeyou}</Text>
 							<Text style={{ ...headings.h4, textAlign: 'center' }}>
 								{languages.welcome} {languages.toapp}

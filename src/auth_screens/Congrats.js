@@ -34,7 +34,7 @@ export default class Congrats extends Component {
                             onPress={() => { this.props.navigation.navigate("Login") }}
                         />
                     </View>
-                    <View style={{ alignItems: 'center', marginVertical: 20 }}>
+                    <View style={{ alignItems: 'center', marginVertical: 20, }}>
                         <Text>--------------- Or -----------------</Text>
                         <Text style={{ ...headings.h6M, textAlign: 'center' }}>{languages.dontaccount}</Text>
 
