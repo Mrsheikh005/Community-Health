@@ -57,10 +57,13 @@ const Colors = {
     golden: "#FFD213",
     black: "#000000",
     lightsky: "#D4FFF2",
+    PRIMARY_02_4: "#CED4DA",
     lightGreen: "#F5FFFC",
     redFaded: "rgba(255,0,0,0.4)",
     red: "rgb(155,0,0)",
-    iconColor : "#949494"
+    iconColor : "#949494",
+    green : "#2dd24c",
+    white:"white"
 }
 
 const form = StyleSheet.create({
