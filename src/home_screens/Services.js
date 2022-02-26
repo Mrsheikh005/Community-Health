@@ -8,7 +8,7 @@ export default class Services extends Component {
 	render() {
 		return (
 			<SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-				<IconHeader
+				{/* <IconHeader
 					onleftPress={() => {
 						this.props.navigation.goBack();
 					}}
@@ -20,7 +20,7 @@ export default class Services extends Component {
 							style={{ left: 20, top: 20 }}
 						/>
 					}
-				/>
+				/> */}
 				<View style={{ marginTop: '10%', marginStart: '10%', width: '50%' }}>
 					<Text style={{ fontSize: 16, fontWeight: 'bold', letterSpacing: 0.8, color: '#68397E' }}>
 						Good Evening!

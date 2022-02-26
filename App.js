@@ -15,12 +15,14 @@ import Congrats from './src/auth_screens/Congrats';
 import NotAvailable from './src/auth_screens/NotAvailable';
 // Home_Screens
 import Services from './src/home_screens/Services';
-import AvailableMechanics from './src/home_screens/AvailableMechanics';
+import AvailableStores from './src/home_screens/AvailableStores.js';
 import MechanicView from './src/reuseables/MechanicView';
 import MechanicInfo from './src/home_screens/MechanicInfo';
 import BookingMechanic from './src/home_screens/BookingMechanic';
 // Libraries
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ShoppingForm from './src/home_screens/ShoppingForm';
+// import AvailableSstores from './src/home_screens/AvailableStoresjs';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,15 +61,13 @@ const App = () => {
 				<Stack.Screen name="Congrats" component={Congrats} />
 				<Stack.Screen name="NotAvailable" component={NotAvailable} />
 				<Stack.Screen name="Services" component={Services} />
-				<Stack.Screen name="AvailableMechanics" component={AvailableMechanics} />
+				<Stack.Screen name="AvailableStores" component={AvailableStores} />
 				<Stack.Screen name="MechanicView" component={MechanicView} />
 				<Stack.Screen name="MechanicInfo" component={MechanicInfo} />
+				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				<Stack.Screen name="BookingMechanic" component={BookingMechanic} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
 };
 export default App;
-
-
-

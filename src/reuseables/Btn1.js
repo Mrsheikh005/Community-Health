@@ -8,7 +8,7 @@ export default class Btn1 extends Component {
     render() {
         const { containerStyle, lable, lableStyle, onPress } = this.props
         return (
-            <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPress} style={{marginVertical:10}}>
                 <View style={{ ...styles.container, ...containerStyle }}>
                     <Text style={{ color: white, ...headings.h4, ...lableStyle }}>{lable}</Text>
                 </View>
