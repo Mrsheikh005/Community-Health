@@ -1,8 +1,8 @@
 import { Platform, StyleSheet } from 'react-native';
 
-const primaryColor = '#2dd24c'
-const secondryColor = '#0c6d9d'
-const textColor = "#606060"
+const primaryColor = '#2dd24c' //Green
+const secondryColor = '#0c6d9d' //Blue shade
+const textColor = "#606060" 
 const textColorDim = "#BBBBBB"
 const transparent = "#00000000"
 const white = "#FFFFFF"
