@@ -343,11 +343,21 @@ PODS:
     - React-Core
   - RNCClipboard (1.5.1):
     - React-Core
+  - RNImageCropPicker (0.37.3):
+    - React-Core
+    - React-RCTImage
+    - RNImageCropPicker/QBImagePickerController (= 0.37.3)
+    - TOCropViewController
+  - RNImageCropPicker/QBImagePickerController (0.37.3):
+    - React-Core
+    - React-RCTImage
+    - TOCropViewController
   - RNScreens (3.10.2):
     - React-Core
     - React-RCTImage
   - RNVectorIcons (9.1.0):
     - React-Core
+  - TOCropViewController (2.6.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -409,6 +419,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCClipboard (from `../node_modules/@react-native-community/clipboard`)"
+  - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -428,6 +439,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - TOCropViewController
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -495,6 +507,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCClipboard:
     :path: "../node_modules/@react-native-community/clipboard"
+  RNImageCropPicker:
+    :path: "../node_modules/react-native-image-crop-picker"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNVectorIcons:
@@ -548,8 +562,10 @@ SPEC CHECKSUMS:
   ReactCommon: 2e816fad39f65f2a94a5999d5be463a6b620dcf6
   RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
   RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
+  RNImageCropPicker: 44e2807bc410741f35d4c45b6586aedfe3da39d2
   RNScreens: d6da2b9e29cf523832c2542f47bf1287318b1868
   RNVectorIcons: 7923e585eaeb139b9f4531d25a125a1500162a0b
+  TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
   Yoga: 5cbf25add73edb290e1067017690f7ebf56c5468
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

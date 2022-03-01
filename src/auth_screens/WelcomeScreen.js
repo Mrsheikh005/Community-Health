@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StatusBar, Text, View, TouchableOpacity, Image } from 'react-native';
 import { container, headings, primaryColor, textColor, white,secondryColor } from '../utils/Styles';
-import { InputField } from '../reuseables/InputField';
+import InputField  from '../reuseables/InputField/index'
 import IconHeader from '../reuseables/IconHeader';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -22,7 +22,7 @@ export default class  	WelcomeScreen extends Component {
 							<Text style={{ ...headings.h4, textAlign: 'center' }}>
 								{languages.welcome} {languages.toapp}
 							</Text>
-							<Image source={require('../assets/images/Welcome.png')} style={{ top: '1%' ,height:'40%',width:'40%'}} />
+							{/* <Image source={require('../assets/images/Welcome.png')} style={{ top: '1%' ,height:'40%',width:'40%'}} /> */}
 						</View>
 
 						<View>
@@ -37,9 +37,7 @@ export default class  	WelcomeScreen extends Component {
 								}}
 							>
 								<InputField
-									isEditable={false}
-									lable="Search your area..."
-									icon={<Entypo name="location-pin" size={22} color={secondryColor} />}
+									
 								/>
 							</TouchableOpacity>
 						</View>

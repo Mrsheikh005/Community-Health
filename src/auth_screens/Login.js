@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
 import { container, headings, primaryColor, Colors, white } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
 import languages from '../assets/languages/English.json';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { InputField } from '../reuseables/InputField';
+import InputField from '../reuseables/InputField';
 import Btn1 from '../reuseables/Btn1';
 
 const myref = React.createRef();
@@ -25,7 +25,7 @@ export default class Login extends Component {
 	render() {
 		const { isSubmitting } = this.state;
 		return (
-			<View style={container.empty}>
+			<SafeAreaView style={container.empty}>
 				<IconHeader
 					onleftPress={() => { 
 						this.props.navigation.goBack();
@@ -38,7 +38,10 @@ export default class Login extends Component {
 					</View>
 
 					<View>
-						<InputField
+
+						<InputField lable="Email Address"></InputField>
+						<InputField lable="Password"></InputField>
+						{/* <InputField
 							keyboardType="email-address"
 							lable="Email"
 							icon={<Fontisto name="email" size={20} color={Colors.gray} />}
@@ -46,13 +49,13 @@ export default class Login extends Component {
 						/>
 
 						<InputField
-							ref={myref}
-							oniconPress={this.toggleSecure}
-							isSecure={true}
+							// ref={myref}
+							// oniconPress={this.toggleSecure}
+							// isSecure={true}
 							lable="Password"
 							icon={<Entypo name="eye" size={20} color={Colors.gray} />}
 							// onChange={(txt) => this.setState({ password: txt })}
-						/>
+						/> */}
 
 						<TouchableOpacity
 							onPress={() => {
@@ -68,12 +71,12 @@ export default class Login extends Component {
 							<Btn1
 								lableStyle={{ ...headings.h6M, color: white }}
 								lable={languages.login}
-								onPress={() => this.props.navigation.navigate('Services')}
+								onPress={() => this.props.navigation.navigate('AvailableStores')}
 							/>
 						</View>
 					</View>
 				</ScrollView>
-			</View>
+			</SafeAreaView>
 		);
 	}
 }
