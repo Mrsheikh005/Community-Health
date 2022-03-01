@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { Text, View, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
-=======
-import { Text, View, ScrollView, TouchableOpacity,Image} from 'react-native';
->>>>>>> 5cd1f4ef45381ec632d1a5acbeaa6aaf69f32cfd
+import { Text, View, ScrollView, TouchableOpacity,Image,SafeAreaView} from 'react-native';
 import { container, headings, primaryColor, Colors, white } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
 import languages from '../assets/languages/English.json';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import InputField from '../reuseables/InputField';
+import {InputField} from '../reuseables/InputField';
 import Btn1 from '../reuseables/Btn1';
 
 const myref = React.createRef();
@@ -77,11 +73,7 @@ export default class Login extends Component {
 							<Btn1
 								lableStyle={{ ...headings.h6M, color: white }}
 								lable={languages.login}
-<<<<<<< HEAD
-								onPress={() => this.props.navigation.navigate('AvailableStores')}
-=======
 								onPress={() => this.props.navigation.navigate('Home')}
->>>>>>> 5cd1f4ef45381ec632d1a5acbeaa6aaf69f32cfd
 							/>
 						</View>
 					</View>
