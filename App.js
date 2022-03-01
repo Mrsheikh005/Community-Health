@@ -22,7 +22,7 @@ import MechanicView from './src/reuseables/MechanicView';
 import MechanicInfo from './src/home_screens/MechanicInfo';
 import BookingMechanic from './src/home_screens/BookingMechanic';
 // Libraries
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import ShoppingForm from './src/home_screens/ShoppingForm';
 import { Colors, secondryColor } from './src/utils/Styles';
 import AntIcon from "react-native-vector-icons/AntDesign";
