@@ -31,6 +31,7 @@
     "react-native-reanimated": "^2.4.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.2",
+    "react-native-simple-radio-button": "^2.7.4",
     "react-native-star-rating": "^1.1.0",
     "react-native-swiper-flatlist": "^3.0.16",
     "react-native-switch-selector": "^2.1.4",

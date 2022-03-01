@@ -11,16 +11,12 @@ import Login from './src/auth_screens/Login';
 import SignUp from './src/auth_screens/SignUp';
 import ForgotPassword from './src/auth_screens/ForgotPassword';
 import OTPScreen from './src/auth_screens/OTPScreen';
-import CreateNewPassword from './src/auth_screens/CreateNewPassword';
-import WelcomeScreen from './src/auth_screens/WelcomeScreen';
-import Congrats from './src/auth_screens/Congrats';
-import NotAvailable from './src/auth_screens/NotAvailable';
+import InsuranceForm2 from './src/home_screens/InsuranceForm2';
+import InsuranceForm from './src/home_screens/InsuranceForm';
 // Home_Screens
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
-import MechanicView from './src/reuseables/MechanicView';
-import MechanicInfo from './src/home_screens/MechanicInfo';
-import BookingMechanic from './src/home_screens/BookingMechanic';
+
 // Libraries
 
 import ShoppingForm from './src/home_screens/ShoppingForm';
@@ -101,7 +97,7 @@ const App = () => {
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
 				<Stack.Screen name="Splash" component={Splash} />
 				{/* <Stack.Screen name="OnBoardingScreens" component={OnBoardingScreens} /> */}
-				<Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+				{/* <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
 				<Stack.Screen name="Login" component={Login} />
 				<Stack.Screen name="SignUp" component={SignUp} />
 				<Stack.Screen name="ForgotPassword" component={ForgotPassword} />
@@ -111,7 +107,8 @@ const App = () => {
 				{/* <Stack.Screen name="NotAvailable" component={NotAvailable} /> */}
 				<Stack.Screen name="Home" component={MyBottomTabs} />
 				<Stack.Screen name="AvailableStores" component={AvailableStores} />
-				{/* <Stack.Screen name="MechanicView" component={MechanicView} /> */}
+				<Stack.Screen name="Insurance" component={InsuranceForm} />
+				<Stack.Screen name="Insurance2" component={InsuranceForm2} />
 				{/* <Stack.Screen name="MechanicInfo" component={MechanicInfo} /> */}
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}

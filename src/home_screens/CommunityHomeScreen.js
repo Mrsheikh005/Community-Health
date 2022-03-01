@@ -20,6 +20,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 1,
 					name: 'Shop Medical Product',
+					onpress: 'AvailableStores',
 					image: require('../assets/images/Shop.jpg')
 				},
 				{
@@ -72,6 +73,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 10,
 					name: 'Buy Medical Insurance',
+					onpress: 'Insurance',
 					image: require('../assets/images/BM.jpg')
 				},
 				{
@@ -109,7 +111,7 @@ export default class CommunityHomeScreen extends Component {
 					<FlatList horizontal={false} numColumns={2} style={{height:'100%'}} renderItem={({ item }) => (
                                <View style={{ flex: 1, marginBottom: 10,paddingVertical:'2%',marginHorizontal:'2%', backgroundColor: Colors.white }}>
 							   <TouchableOpacity
-								   onPress={() => {this.props.navigation.navigate('AvailableStores')}}
+								   onPress={() => {this.props.navigation.navigate(item.onpress)}}
 								   style={{  marginHorizontal: 5, paddingBottom: 2 }}
 							   >
 								   <View style={{ flexDirection: 'row',flex:1 }}>
