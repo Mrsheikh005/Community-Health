@@ -14,7 +14,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 // import { Fonts, Colors } from "../../Theme";
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import InputField from "../../reuseables/InputField";
+import InputField1 from "../../reuseables/InputField";
 // import ImagePicker from 'react-native-image-crop-picker';
 const ShoppingForm = () => {
     // const Picking = () => {
@@ -73,11 +73,11 @@ const ShoppingForm = () => {
                                 </View>
                             </TouchableOpacity>
                         }
-                       <InputField label="Your Name"
+                       <InputField1 label="Your Name"
                         placeholder="SomeOne"
                         // keyboardType="email-address"
                         />
-                        <InputField label="Your Email"
+                        <InputField1 label="Your Email"
                         placeholder="example@domain.com"
                         keyboardType="email-address"
                         />

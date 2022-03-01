@@ -14,7 +14,7 @@ import WelcomeScreen from './src/auth_screens/WelcomeScreen';
 import Congrats from './src/auth_screens/Congrats';
 import NotAvailable from './src/auth_screens/NotAvailable';
 // Home_Screens
-import Services from './src/home_screens/Services';
+import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
 import MechanicView from './src/reuseables/MechanicView';
 import MechanicInfo from './src/home_screens/MechanicInfo';
@@ -60,7 +60,7 @@ const App = () => {
 				<Stack.Screen name="CreateNewPassword" component={CreateNewPassword} />
 				<Stack.Screen name="Congrats" component={Congrats} />
 				<Stack.Screen name="NotAvailable" component={NotAvailable} />
-				<Stack.Screen name="Services" component={Services} />
+				<Stack.Screen name="Home" component={CommunityHomeScreen} />
 				<Stack.Screen name="AvailableStores" component={AvailableStores} />
 				<Stack.Screen name="MechanicView" component={MechanicView} />
 				<Stack.Screen name="MechanicInfo" component={MechanicInfo} />

@@ -27,10 +27,11 @@ export default class ForgotPassword extends Component {
 					leftBtn={<AntDesign size={25} name="arrowleft" color={primaryColor} style={{ left: 20, top: 20 }}/>}
 				/>
 				<ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
-					<View style={{ paddingVertical: 20, alignItems: 'center' }}>
-					<Image source={require('../assets/images/ForgotPass.png')} />
-					</View>
-					<View style={{ marginBottom: 15 }}>
+					{/* <View style={{ paddingVertical: 20, alignItems: 'center' }}>
+					
+					</View> */}
+					<View style={{ marginHorizontal:'1%' }}>
+					<Image source={require('../assets/images/ForgotPass.png')} style={{height:'50%',alignSelf:'center',resizeMode:'contain'}}/>
 						<InputField
 							keyboardType="email-address"
 							lable="Email"

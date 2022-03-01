@@ -10,11 +10,9 @@ import Btn1 from '../reuseables/Btn1';
 import SuccessfulView from './SuccessfulView';
 import IconHeader from '../reuseables/IconHeader';
 
-const myref1 = React.createRef();
-const modalRef = React.createRef();
-const modalRef1 = React.createRef();
 
-const PIN_COUNT = 5;
+
+// const PIN_COUNT = 5;
 
 export default class OTPScreen extends Component {
 	constructor(props) {
@@ -35,53 +33,29 @@ export default class OTPScreen extends Component {
 					}
 				/>
 				<ScrollView contentContainerStyle={{ justifyContent: 'center', flexGrow: 1 }}>
-					<View style={{ alignItems: 'center' }}>
-						<Image source={require('../assets/images/OTP.png')} />
+					<View style={{ alignItems: 'center' ,marginHorizontal:'2%'}}>
+						<Image source={require('../assets/images/OTP.png')} style={{resizeMode:'contain',height:'60%'}}/>
 					</View>
 					<View style={styles.View1}>
 						<Text style={styles.t1}>{languages.sendotptext}</Text>
 					</View>
-					<View style={{ alignItems: 'center' }}>
-						<OTPInputView
-							style={{ width: '80%', height: 200 }}
-							pinCount={PIN_COUNT}
-							codeInputFieldStyle={styles.underlineStyleBase}
-							codeInputHighlightStyle={styles.underlineStyleHighLighted}
-							secureTextEntry={false}
-							// code={this.state.code} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
-							// onCodeChanged={code => { this.setState({ code }) }}
-							// editable
-							// clearInputs={this.state.isclearInput}
-							// autoFocusOnLoad={false}
-							// onCodeFilled={code => { this.handleOnConfirm() }}
-						/>
-					</View>
+					
 
 					<View>
 						<Btn1
 							containerStyle={{ marginBottom: 5 }}
-							lable={languages.confirm}
+							lable={languages.Login}
 							lableStyle={{ ...headings.h6M,color: white }}
 							onPress={() => {
-								this.props.navigation.navigate('CreateNewPassword');
+								this.props.navigation.navigate('Login');
 							}}
 						/>
 					</View>
 
-					<View style={{ alignItems: 'center', marginTop: 8 }}>
-						<Text style={headings.h5}>{languages.didntgetotp}</Text>
-						<TouchableOpacity
-							onPress={() => {
-								alert('Sent Again ');
-							}}
-						>
-							<Text style={{ ...headings.h6M, color: primaryColor }}>{languages.sendagain}</Text>
-						</TouchableOpacity>
-					</View>
+					
 				</ScrollView>
 
-				<ReactModal ref={modalRef} view={<SuccessfulView msg1={languages.OTPverified} />} />
-				<ReactModal ref={modalRef1} view={<SuccessfulView msg1={languages.wesendotp} />} />
+				
 			</View>
 		);
 	}
@@ -89,11 +63,15 @@ export default class OTPScreen extends Component {
 
 const styles = StyleSheet.create({
 	View1: {
-		paddingTop: 30,
-		marginHorizontal: 30
+		// paddingTop: 30,
+		// marginHorizontal: 30
+		justifyContent:'center',
+		alignSelf:'center'
 	},
 	t1: {
-		paddingHorizontal: 5,
+		// paddingHorizontal: 5,
+		textAlign:'center',
+		// fontSize:15,
 		color: Colors.black,
 		textAlign: 'center',
 		...headings.h7M

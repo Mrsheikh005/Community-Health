@@ -2,7 +2,7 @@ import React from "react";
 import { Wrapper, Input, Icon, Loginlabel } from "./styles";
 import { Colors } from "../../utils/Styles";
 
-const InputField = ({ ...props }) => {
+const InputField1 = ({ ...props }) => {
   return (
     <>
       <Loginlabel error={props.error} style={{ ...props.labelStyle }}>
@@ -26,4 +26,4 @@ const InputField = ({ ...props }) => {
   );
 };
 
-export default InputField;
+export default InputField1;
