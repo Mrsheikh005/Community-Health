@@ -8,11 +8,11 @@ const transparent = "#00000000"
 const white = "#FFFFFF"
 const dimPrimaryColor = "#F5FFFC"
 
-const normalFont = Platform.OS === "ios" ? "Metropolis-Regular" : "Metropolis-Regular"
-const mediumFont = Platform.OS === "ios" ? "Metropolis-Medium" : "Metropolis-Medium"
-const boldFont = Platform.OS === "ios" ? "Metropolis-Bold" : "Metropolis-Bold"
-const styleFont = Platform.OS === 'ios' ? "Satisfy-Regular" : "Satisfy-Regular" 
-const stylishFont = "Hello Valentica Regular"
+const normalFont = Platform.OS === "ios" ? "System" : "System"
+const mediumFont = Platform.OS === "ios" ? "System" : "System"
+const boldFont = Platform.OS === "ios" ? "System" : "System"
+const styleFont = Platform.OS === 'ios' ? "System" : "System" 
+const stylishFont = "System"
 const textFont = { fontFamily: normalFont }
 const mediumTextFont = { fontFamily: mediumFont }
 const boldTextFont = { fontFamily: boldFont }
@@ -33,7 +33,7 @@ const container = StyleSheet.create({
 
 const headings = StyleSheet.create({
     h1: { ...textFont, fontSize: 30, color: textColor },
-    h1s: { fontSize: 30, color: textColor, fontFamily:'Hello Valentica Regular'},
+    h1s: { fontSize: 30, color: textColor, fontFamily:'System'},
     h2: { ...mediumTextFont, fontSize: 24, color: textColor },
     h3: { ...mediumTextFont, fontSize: 22, color: textColor },
     h4: { ...mediumTextFont, fontSize: 20, color: textColor },
