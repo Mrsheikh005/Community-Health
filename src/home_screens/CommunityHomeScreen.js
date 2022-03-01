@@ -1,260 +1,135 @@
-// import { Text, View, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-// import React, { Component } from 'react';
-// import { SearchBar } from 'react-native-elements';
-// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-// import AntDesign from 'react-native-vector-icons/AntDesign';
-// // import Swiper from 'react-native-swiper';
-// import { SwiperFlatList } from 'react-native-swiper-flatlist';
-// const colors = [ 'Notification', 'Menu', 'Record', 'Staff' ];
-// export default class CommunityHomeScreen extends Component {
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = {
-// 			searchValue: ''
-			
-// 		};
-// 	}
+import React, { Component } from 'react';
+import { Text, View, TouchableOpacity, Image, FlatList,SafeAreaView} from 'react-native';
+import { Colors, primaryColor } from '../utils/Styles';
+import { useNavigation } from "@react-navigation/native";
+// import IconHeader from '../reuseables/IconHeader';
+// import IconHeader from '../reuseables/IconHeader';
+import TransparentHeader from '../reuseables/TransparentHeader/TransparentHeader';
+
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import StarRating from 'react-native-star-rating';
+
+
+export default class CommunityHomeScreen extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			starCount: 3.5,
+			// Array of Data (items)
+			Data: [
+				{
+					id: 1,
+					name: 'Shop Medical Product',
+					image: require('../assets/images/Shop.jpg')
+				},
+				{
+					id: 2,
+					name: 'Offer & Promotions',
+					
+					image: require('../assets/images/Offer.png')
+				},
+				{
+					id: 3,
+					name: 'Home Healthcare',
+					
+					image: require('../assets/images/HH.jpg')
+				},
+				{
+					id: 4,
+					name: 'Cosmetic Offers',
+					image: require('../assets/images/CO.jpg')
+				},
+				{
+					id: 5,
+					name: 'Medical Tourism',
+					image: require('../assets/images/MT.jpg')
+				},
+				{
+					
+					id: 6,
+					name: 'Job Portal',
+					
+					image: require('../assets/images/JP.jpg')
+				},
+				{
+					id: 7,
+					name: 'TeleHealth & VirtualHealth',
+					
+					image: require('../assets/images/TH.jpg')
+				},
+				{
+					id: 8,
+					name: 'HealthProviders in UAE',
+					
+					image: require('../assets/images/HP.png')
+				},
+				{
+					id: 9,
+					name: 'Health Transport',
+					
+					image: require('../assets/images/HT.png')
+				},
+				{
+					id: 10,
+					name: 'Buy Medical Insurance',
+					image: require('../assets/images/BM.jpg')
+				},
+				{
+					id: 11,
+					name: 'Medical Education',
+					image: require('../assets/images/ME.png')
+				},
+				{
+					id: 12,
+					name: 'Order Pharmacy',
+					image: require('../assets/images/OP.jpg')
+				},
+				
+			]
+		};
+	}
 
 	
 
-// 	render() {
-// 		const { Data } = this.state;
-// 		return (
-// 			<View style={{ flex: 1, backgroundColor: 'white' }}>
-// 				<View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-// 					<View>
-// 						<Image source={require('../assets/images/flag.png')} style={{ height: 35, width: 50 }} />
-// 					</View>
-// 					<View style={{ justifyContent: 'center', alignItems: 'center', padding: 10 }}>
-// 						<Image source={require('../assets/images/CHlogo.png')} style={{ height: 55, width: 170 }} />
-// 					</View>
-// 					<TouchableOpacity>
-// 						<View>
-// 							<MaterialIcons
-// 								name="favorite-border"
-// 								size={20}
-// 								color={'grey'}
-// 								style={{ borderWidth: 0, padding: 5, borderColor: 'grey', borderRadius: 5 }}
-// 							/>
-// 						</View>
-// 					</TouchableOpacity>
-// 					<TouchableOpacity>
-// 						<View>
-// 							<AntDesign
-// 								name="shoppingcart"
-// 								size={20}
-// 								color={'grey'}
-// 								style={{ borderWidth: 0, padding: 5, borderColor: 'grey', borderRadius: 5 }}
-// 							/>
-// 						</View>
-// 					</TouchableOpacity>
-// 				</View>
-// 				<View>
-// 					<SearchBar
-// 						placeholder="Search Here..."
-// 						lightTheme
-// 						round
-// 						value={this.state.searchValue}
-// 						containerStyle={{ borderRadius: 20, padding: 0, marginHorizontal: 20 }}
-// 					/>
-// 				</View>
-// 				<View style={{ top: 20 }}>
-// 					<SwiperFlatList
-// 						autoplay
-// 						autoplayDelay={2}
-// 						autoplayLoop
-// 						index={0}
-// 						showPagination
-// 						paginationStyle={{ bottom: -30 }}
-// 						// paginationStyleItemActive={{width:20}}
-// 						paginationDefaultColor={'#006699'}
-// 						paginationActiveColor={'#37DD56'}
-// 						data={colors}
-// 						renderItem={({ item }) => (
-// 							<TouchableOpacity>
-// 								<View
-// 									style={{
-// 										borderWidth: 0,
-// 										marginHorizontal: 10,
-// 										height: 120,
-// 										width: 300,
-// 										elevation: 2
-// 									}}
-// 								>
-// 									<Image
-// 										source={require('../assets/images/med.png')}
-// 										style={{ height: '100%', width: '100%' }}
-// 									/>
-// 								</View>
-// 							</TouchableOpacity>
-// 						)}
-// 					/>
-// 				</View>
-// 				{/* <View>
-// 					<FlatList
-// 						horizontal={false}
-// 						renderItem={this.ProductsView}
-// 						data={Data}
-// 						numColumns={2}
-// 						containerStyle={{}}
-// 					/>
-// 				</View> */}
+	onStarRatingPress(rating) {
+		this.setState({
+			starCount: rating
+		});
+	}
 
-// 				<ScrollView contentContainerStyle={{}} showsVerticalScrollIndicator={false}>
-// 					<View style={{}}>
-// 						<View
-// 							style={{
-// 								flexDirection: 'row',
-// 								justifyContent: 'space-around',
-// 								top: 60,
-// 								alignItems: 'center'
-// 							}}
-// 						>
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/Shop.jpg')}
-// 										style={{ height: 100, width: 120, left: 10 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Shop Medical Products</Text>
-// 							</TouchableOpacity>
-
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/offers.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Offers And Promotions</Text>
-// 							</TouchableOpacity>
-// 						</View>
-
-// 						<View style={{ flexDirection: 'row', justifyContent: 'space-around', top: 60 }}>
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/home.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Home Health Care</Text>
-// 							</TouchableOpacity>
-
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/cosmetics.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Cosmetic Offers</Text>
-// 							</TouchableOpacity>
-// 						</View>
-
-// 						<View style={{ flexDirection: 'row', justifyContent: 'space-around', top: 60 }}>
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/tourism.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Medical Tourism</Text>
-// 							</TouchableOpacity>
-
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/education.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Medical Education</Text>
-// 							</TouchableOpacity>
-// 						</View>​
-// 						<View style={{ flexDirection: 'row', justifyContent: 'space-around', top: 60 }}>
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/job.jpg')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Job Portal</Text>
-// 							</TouchableOpacity>
-
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/telehealth.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Telehealth{'\n'}and Virtual Health</Text>
-// 							</TouchableOpacity>
-// 						</View>
-
-// 						<View style={{ flexDirection: 'row', justifyContent: 'space-around', top: 60 }}>
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/provider.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Health Providers in UAE</Text>
-// 							</TouchableOpacity>
-
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/telehealth.png')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Health Transport</Text>
-// 							</TouchableOpacity>
-// 						</View>
-
-// 						<View style={{ flexDirection: 'row', justifyContent: 'space-around', top: 60 }}>
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/insurance.jpg')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Order Pharmacy Online</Text>
-// 							</TouchableOpacity>
-
-// 							<TouchableOpacity>
-// 								<View style={{ borderWidth: 0, borderRadius: 5, elevation: 1 }}>
-// 									<Image
-// 										source={require('../assets/images/order.jpg')}
-// 										style={{ height: 120, width: 120 }}
-// 									/>
-// 								</View>
-// 								<Text style={{ color: 'black' }}>Telehealth and Virtual Health</Text>
-// 							</TouchableOpacity>
-// 						</View>
-// 					</View>
-// 				</ScrollView>
-// 			</View>
-// 		);
-// 	}
-// }
-
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
-
-export default class CommunityHomeScreen extends Component {
-  render() {
-	return (
-	  <View>
-		<Text>CommunityHomeScreen</Text>
-	  </View>
-	)
-  }
+	render() {
+		
+		const { Data } = this.state;
+		return (
+			<SafeAreaView style={{ flex: 1,justifyContent:'space-between',backgroundColor:Colors.white}}>
+				
+				<TransparentHeader title="Shop Medical Products"/>
+				
+				<View stye={{flex:1}}>
+					<FlatList horizontal={false} numColumns={2} style={{height:'100%'}} renderItem={({ item }) => (
+                               <View style={{ flex: 1, marginBottom: 10,paddingVertical:'2%',marginHorizontal:'2%', backgroundColor: Colors.white }}>
+							   <TouchableOpacity
+								   onPress={() => {this.props.navigation.navigate('AvailableStores')}}
+								   style={{  marginHorizontal: 5, paddingBottom: 2 }}
+							   >
+								   <View style={{ flexDirection: 'row',flex:1 }}>
+									   <View style={{ alignItems: 'center',flex:1,borderWidth:0.5,borderRadius:90,overflow:'hidden',borderColor:primaryColor}}>
+										   <Image style={{width:'100%',height:150, }} source={item.image} />
+									   </View>
+			   
+									   
+								   </View>
+								   <View style={{ zIndex: 10, width: '100%',justifyContent:'space-between' }}>
+									   <Text style={{fontSize:15,marginTop: '5%', fontWeight:'700', color:primaryColor,alignSelf:'center'}}>{item.name}</Text>
+									   
+								   </View>
+							   </TouchableOpacity>
+						   </View>
+                            )} data={Data} />
+				</View>
+				<View/>
+				<View/>
+			</SafeAreaView>
+		);
+	}
 }

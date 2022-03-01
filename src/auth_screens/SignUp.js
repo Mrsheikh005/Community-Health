@@ -110,7 +110,7 @@ export default class Registration extends Component {
 									lableStyle={{ ...headings.h6M, color: white }}
 									lable={languages.register}
 									onPress={() => {
-										this.props.navigation.navigate('Zunair');
+										this.props.navigation.navigate('Login');
 									}}
 								/>
 							

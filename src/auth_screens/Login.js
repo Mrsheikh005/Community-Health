@@ -73,8 +73,17 @@ export default class Login extends Component {
 							<Btn1
 								lableStyle={{ ...headings.h6M, color: white }}
 								lable={languages.login}
-								onPress={() => this.props.navigation.navigate('Home')}
+								onPress={() => this.props.navigation.replace('Home')}
 							/>
+							<TouchableOpacity
+							onPress={() => {
+								this.props.navigation.navigate('SignUp');
+							}}
+						>
+							<Text style={{ ...headings.h7M, color: primaryColor, textAlign: 'center' }}>
+								{languages.register}
+							</Text>
+						</TouchableOpacity>
 						</View>
 					</View>
 				</ScrollView>
