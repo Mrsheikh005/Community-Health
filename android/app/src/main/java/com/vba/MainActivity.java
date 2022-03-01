@@ -1,4 +1,4 @@
-package com.vba;
+package com.communityhealth;
 
 import com.facebook.react.ReactActivity;
 
