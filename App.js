@@ -13,6 +13,7 @@ import ForgotPassword from './src/auth_screens/ForgotPassword';
 import OTPScreen from './src/auth_screens/OTPScreen';
 import InsuranceForm2 from './src/home_screens/InsuranceForm2';
 import InsuranceForm from './src/home_screens/InsuranceForm';
+import Profile from './src/home_screens/Profile';
 // Home_Screens
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
@@ -73,7 +74,7 @@ function MyBottomTabs() {
 	  />
 	  <Tab.Screen
 		name="Profile"
-		component={CommunityHomeScreen}
+		component={Profile}
 		options={{
 		  tabBarLabel: 'Profile',
 		  tabBarIcon: ({ color }) => (

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, Image, FlatList,SafeAreaView} from 'react-native';
-import { Colors, primaryColor } from '../utils/Styles';
+import { Colors, primaryColor, secondryColor } from '../utils/Styles';
 import { useNavigation } from "@react-navigation/native";
 // import IconHeader from '../reuseables/IconHeader';
 // import IconHeader from '../reuseables/IconHeader';
 import TransparentHeader from '../reuseables/TransparentHeader/TransparentHeader';
 
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Feather from 'react-native-vector-icons/Feather';
 import StarRating from 'react-native-star-rating';
 
 
@@ -103,11 +103,19 @@ export default class CommunityHomeScreen extends Component {
 		
 		const { Data } = this.state;
 		return (
-			<SafeAreaView style={{ flex: 1,justifyContent:'space-between',backgroundColor:Colors.white}}>
+			<SafeAreaView style={{ flex: 1,paddingBottom:'25%',justifyContent:'space-between',backgroundColor:Colors.white}}>
 				
-				<TransparentHeader title="Shop Medical Products"/>
+				<View style={{width:'100%',height:'8%',flexDirection:'row' ,justifyContent:'space-between',paddingHorizontal:'2%'}}>
+				<Image style={{resizeMode:'contain',height:'100%',width:'25%' }} source={require('../assets/images/Logo.png')} />
+				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
+				<Text style={{color:secondryColor, fontSize:14,fontWeight:'bold',alignSelf:'center',width:'20%'}}>Deliver To UAE</Text>
+				<View style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
+				<Feather name="shopping-cart" size={30} color={secondryColor} style={{alignSelf:'center'}}/>
+				</View>
+				</View>
 				
 				<View stye={{flex:1}}>
+					<Text style={{fontSize:25,color:Colors.black,alignSelf:'center',marginBottom:'5%',fontWeight:'bold'}}>Categories</Text>
 					<FlatList horizontal={false} numColumns={2} style={{height:'100%'}} renderItem={({ item }) => (
                                <View style={{ flex: 1, marginBottom: 10,paddingVertical:'2%',marginHorizontal:'2%', backgroundColor: Colors.white }}>
 							   <TouchableOpacity
@@ -115,8 +123,8 @@ export default class CommunityHomeScreen extends Component {
 								   style={{  marginHorizontal: 5, paddingBottom: 2 }}
 							   >
 								   <View style={{ flexDirection: 'row',flex:1 }}>
-									   <View style={{ alignItems: 'center',flex:1,borderWidth:0.5,borderRadius:90,overflow:'hidden',borderColor:primaryColor}}>
-										   <Image style={{width:'100%',height:150, }} source={item.image} />
+									   <View style={{ alignItems: 'center',flex:1,borderWidth:0.5,borderRadius:150,overflow:'hidden',borderColor:primaryColor}}>
+										   <Image style={{width:'100%',height:180, }} source={item.image} />
 									   </View>
 			   
 									   
