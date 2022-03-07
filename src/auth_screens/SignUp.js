@@ -17,17 +17,50 @@ const myref = React.createRef();
 const myref1 = React.createRef();
 
 export default class Registration extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			name: '',
-			email: '',
-			password: '',
-			confirmPassword: '',
+	state = {
+		fName: '',
+		// lName: '',
+		email: '',
+		password: '',
+		confirmPassword: '',
+		userToken:'',
+		isSubmitting: false,
+		isPolicyChecked: false
+	};
+	SignUpSubmit =() =>{
+		
+		fetch('https://pharmacy.shahjahanxd.xyz/api/user/register', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: this.state.fName,
+    email: this.state.email,
+	password: this.state.password,
+	password_confirmation: this.state.confirmPassword
+  })
+})
+  .then((response) => response.json())
+    .then((json) => {
 
-			isSubmitting: false,
-			isPolicyChecked: false
-		};
+		if(json.status == true){
+			this.props.navigation.navigate('Login')
+			
+			// const data = performTimeConsumingTask();
+		  }else{
+			alert('SignUp Failed')
+			console.log(json.errors.name)
+			console.log(json.errors.email)
+			console.log(json.errors.password)
+		  }
+    })
+	.catch((error) => {
+		console.error(error);
+	  });
+
+
 	}
 
 	toggleSecure = (ref) => {
@@ -97,15 +130,7 @@ export default class Registration extends Component {
 								this.setState({ name: txt });
 							}}
 						/>
-						<InputField
-							lable={languages.email}
-							keyboardType="email-address"
-							icon={<Feather name="user" size={20} color={Colors.gray} />}
-							value={this.state.email}
-							onChange={(txt) => {
-								this.setState({ email: txt });
-							}}
-						/>
+					
 
 						<InputField
 							keyboardType="email-address"
@@ -153,11 +178,13 @@ export default class Registration extends Component {
 						</View>
 
 						<View style={{ marginBottom: 20, marginTop: 30 }}>
-							<Btn1
-								lableStyle={{ ...headings.h6M, color: white }}
-								lable={languages.register}
-								onPress={() => this.handleSignup()}
-							/>
+						
+								<Btn1
+									lableStyle={{ ...headings.h6M, color: white }}
+									lable={languages.register}
+									onPress={this.SignUpSubmit}
+								/>
+							
 						</View>
 					</View>
 				</ScrollView>

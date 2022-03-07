@@ -92,6 +92,7 @@ export default class CommunityHomeScreen extends Component {
 	}
 
 	
+	
 
 	onStarRatingPress(rating) {
 		this.setState({
@@ -107,8 +108,10 @@ export default class CommunityHomeScreen extends Component {
 				
 				<View style={{width:'100%',height:'8%',flexDirection:'row' ,justifyContent:'space-between',paddingHorizontal:'2%'}}>
 				<Image style={{resizeMode:'contain',height:'100%',width:'25%' }} source={require('../assets/images/Logo.png')} />
+				<View style={{flexDirection:'row' ,justifyContent:'space-evenly'}}>
 				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
-				<Text style={{color:secondryColor, fontSize:14,fontWeight:'bold',alignSelf:'center',width:'20%'}}>Deliver To UAE</Text>
+				<Text style={{color:secondryColor, fontSize:14,fontWeight:'bold',alignSelf:'center',width:'30%'}}>Deliver To UAE</Text>
+				</View>
 				<View style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
 				<Feather name="shopping-cart" size={30} color={secondryColor} style={{alignSelf:'center'}}/>
 				</View>

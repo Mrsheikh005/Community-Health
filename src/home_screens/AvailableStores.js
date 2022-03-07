@@ -17,81 +17,22 @@ export default class AvailableStores extends Component {
 			starCount: 3.5,
 			// Array of Data (items)
 			Data: [
-				{
-					id: 1,
-					name: 'Store 1',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 2,
-					name: 'Store 2',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 3,
-					name: 'Store 3',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 4,
-					name: 'Store 4',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 5,
-					name: 'Store 5',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					
-					id: 6,
-					name: 'Store 6',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 7,
-					name: 'Store 7',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 8,
-					name: 'Store 8',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 9,
-					name: 'Store 9',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				},
-				{
-					id: 10,
-					name: 'Store 10',
-					rate: '2.27 ',
-					level: 'Skill level',
-					image: require('../assets/images/Image.jpg')
-				}
 			]
 		};
 	}
-
+	componentWillMount() {
+        // this.renderMyData();
+		console.log(this.state.email)
+		return fetch('https://pharmacy.shahjahanxd.xyz/api/shop/get-all-shops')
+    .then((response) => response.json())
+    .then((json) => {
+    //   return json.movies;
+	this.setState({Data: json.data})
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    }
 	
 
 	onStarRatingPress(rating) {
@@ -116,7 +57,7 @@ export default class AvailableStores extends Component {
 							   >
 								   <View style={{ flexDirection: 'row',flex:1 }}>
 									   <View style={{ alignItems: 'center',flex:1}}>
-										   <Image style={{width:'100%',height:150}} source={item.image} />
+										   <Image style={{width:'100%',height:150}} source={item.shopProfile} />
 									   </View>
 			   
 									   
@@ -133,7 +74,7 @@ export default class AvailableStores extends Component {
 										   containerStyle={{ marginHorizontal: '0%', top: '1%', marginTop:'15%'}}
 										   starStyle={{ color:Colors.golden}}
 									   />
-									   <Text style={{fontSize:15, fontWeight:'700', color:Colors.green}}>AED {item.rate}</Text>
+									   <Text style={{fontSize:15, fontWeight:'700', color:Colors.green}}>{item.address}</Text>
 								   </View>
 							   </TouchableOpacity>
 						   </View>
