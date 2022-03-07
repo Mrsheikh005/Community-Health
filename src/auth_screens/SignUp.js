@@ -17,7 +17,7 @@ const myref1 = React.createRef();
 export default class Registration extends Component {
 	state = {
 		fName: '',
-		lName: '',
+		// lName: '',
 		email: '',
 		password: '',
 		confirmPassword: '',
@@ -26,7 +26,7 @@ export default class Registration extends Component {
 		isPolicyChecked: false
 	};
 	SignUpSubmit =() =>{
-		console.log(this.state.email)
+		
 		fetch('https://pharmacy.shahjahanxd.xyz/api/user/register', {
   method: 'POST',
   headers: {
@@ -36,7 +36,7 @@ export default class Registration extends Component {
   body: JSON.stringify({
     name: this.state.fName,
     email: this.state.email,
-	password: this.state.Password,
+	password: this.state.password,
 	password_confirmation: this.state.confirmPassword
   })
 })
