@@ -1,6 +1,6 @@
 import React from "react";
 import { Wrapper, Input, Icon, Loginlabel } from "./styles";
-import { Colors } from "../../utils/Styles";
+// import { Colors } from "../../utils/Styles";
 
 const InputField1 = ({ ...props }) => {
   return (
@@ -20,7 +20,7 @@ const InputField1 = ({ ...props }) => {
         }}
       >
         {props.icon && <Icon source={props.icon} iconStyle={props.iconStyle} />}
-        <Input placeholderTextColor={Colors.gray} {...props} />
+        <Input placeholderTextColor="grey" {...props} />
       </Wrapper>
     </>
   );
