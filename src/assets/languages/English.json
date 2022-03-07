@@ -53,5 +53,6 @@
     "updatepassword": "Update Password",
     "noSlot": "No time slot found",
     "timeSlotTitle": "Select a suitable time slot for delivery",
-    "logoutPrompt": "Are you sure you want to logout?"
+    "logoutPrompt": "Are you sure you want to logout?",
+    "email":"Email Address"
 }

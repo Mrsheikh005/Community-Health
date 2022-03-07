@@ -1,25 +1,62 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, TouchableOpacity,Image,SafeAreaView} from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView } from 'react-native';
 import { container, headings, primaryColor, Colors, white } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
 import languages from '../assets/languages/English.json';
-import Fontisto from 'react-native-vector-icons/Fontisto';
-import Entypo from 'react-native-vector-icons/Entypo';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import {InputField} from '../reuseables/InputField';
+import { InputField } from '../reuseables/InputField';
 import Btn1 from '../reuseables/Btn1';
+import PrefHandler from '../data/PrefHandler';
+import Routes from '../remote/Routes';
+import WebHandler from '../remote/WebHandler';
 
 const myref = React.createRef();
 export default class Login extends Component {
-	state = {
-		email: '',
-		password: '',
-
-		isSubmitting: false
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+			email: '',
+			password: '',
+			isSubmitting: false
+		};
+	}
 
 	toggleSecure = () => {
 		myref.current.toggleSecure();
+	};
+
+	handleLogin = async () => {
+		const { email, password } = this.state;
+
+		if (email == '' || password == '') {
+			alert('empty field not allowed');
+			return;
+		}
+		this.setState({ isLoading: true });
+		const webHandler = new WebHandler();
+
+		// const bodyParams = { email:email, password: password }
+		const bodyParams = new FormData();
+		bodyParams.append('email', email);
+		bodyParams.append('password', password);
+		webHandler.sendGetDataRequest(
+			Routes.LOGIN_USER,
+			bodyParams,
+			(resp) => {
+				const prefs = new PrefHandler();
+				prefs.createSession(resp.data, resp.token, (isCreated) => {
+					if (isCreated) {
+						console.log('Employee Data:', resp.data), console.log('Employee Token', resp.token);
+						this.props.navigation.dispatch(StackActions.replace('Home'));
+					} else {
+						alert('something went wrong..');
+					}
+				});
+			},
+			(errorData) => {
+				alert(errorData);
+				this.setState({ isLoading: false });
+			}
+		);
 	};
 
 	render() {
@@ -27,37 +64,28 @@ export default class Login extends Component {
 		return (
 			<SafeAreaView style={container.empty}>
 				<IconHeader
-					onleftPress={() => { 
+					onleftPress={() => {
 						this.props.navigation.goBack();
 					}}
 					// leftBtn={<AntDesign size={25} name="arrowleft" color={primaryColor} style={{left:20, top:20}}/>}
 				/>
 				<ScrollView contentContainerStyle={{ flex: 1, justifyContent: 'center' }}>
-				
 					<View style={{ alignItems: 'center', marginVertical: 5 }}>
-					<Image source={require('../assets/images/Logo.png')} style={{marginVertical:'4%'}} />
+						<Image source={require('../assets/images/Logo.png')} style={{ marginVertical: '4%' }} />
 						<Text style={{ ...headings.h1s, color: primaryColor }}>{languages.login}</Text>
 					</View>
 
 					<View>
-
-						<InputField lable="Email Address"></InputField>
-						<InputField lable="Password"></InputField>
-						{/* <InputField
-							keyboardType="email-address"
-							lable="Email"
-							icon={<Fontisto name="email" size={20} color={Colors.gray} />}
-							// onChange={(txt) => this.setState({ email: txt })}
-						/>
-
 						<InputField
-							// ref={myref}
-							// oniconPress={this.toggleSecure}
-							// isSecure={true}
+							lable="Email Address"
+							value={this.state.email}
+							onChange={(txt) => this.setState({ email: txt })}
+						/>
+						<InputField
 							lable="Password"
-							icon={<Entypo name="eye" size={20} color={Colors.gray} />}
-							// onChange={(txt) => this.setState({ password: txt })}
-						/> */}
+							value={this.state.password}
+							onChange={(txt) => this.setState({ password: txt })}
+						/>
 
 						<TouchableOpacity
 							onPress={() => {
@@ -73,17 +101,18 @@ export default class Login extends Component {
 							<Btn1
 								lableStyle={{ ...headings.h6M, color: white }}
 								lable={languages.login}
-								onPress={() => this.props.navigation.replace('Home')}
+								// onPress={() => this.props.navigation.replace('Home')}
+								onPress={() => this.handleLogin()}
 							/>
 							<TouchableOpacity
-							onPress={() => {
-								this.props.navigation.navigate('SignUp');
-							}}
-						>
-							<Text style={{ ...headings.h7M, color: primaryColor, textAlign: 'center' }}>
-								{languages.register}
-							</Text>
-						</TouchableOpacity>
+								onPress={() => {
+									this.props.navigation.navigate('SignUp');
+								}}
+							>
+								<Text style={{ ...headings.h7M, color: primaryColor, textAlign: 'center' }}>
+									{languages.register}
+								</Text>
+							</TouchableOpacity>
 						</View>
 					</View>
 				</ScrollView>
