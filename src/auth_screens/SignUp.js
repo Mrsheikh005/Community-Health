@@ -21,10 +21,45 @@ export default class Registration extends Component {
 		email: '',
 		password: '',
 		confirmPassword: '',
-
+		userToken:'',
 		isSubmitting: false,
 		isPolicyChecked: false
 	};
+	SignUpSubmit =() =>{
+		console.log(this.state.email)
+		fetch('https://pharmacy.shahjahanxd.xyz/api/user/register', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: this.state.fName,
+    email: this.state.email,
+	password: this.state.Password,
+	password_confirmation: this.state.confirmPassword
+  })
+})
+  .then((response) => response.json())
+    .then((json) => {
+
+		if(json.status == true){
+			this.props.navigation.navigate('Login')
+			
+			// const data = performTimeConsumingTask();
+		  }else{
+			alert('SignUp Failed')
+			console.log(json.errors.name)
+			console.log(json.errors.email)
+			console.log(json.errors.password)
+		  }
+    })
+	.catch((error) => {
+		console.error(error);
+	  });
+
+
+	}
 
 	toggleSecure = (ref) => {
 		ref.current.toggleSecure();
@@ -53,13 +88,7 @@ export default class Registration extends Component {
 								this.setState({ fName: txt });
 							}}
 						/>
-						<InputField
-							lable={languages.lastname}
-							icon={<Feather name="user" size={20} color={Colors.gray} />}
-							onChange={(txt) => {
-								this.setState({ lName: txt });
-							}}
-						/>
+					
 
 						<InputField
 							keyboardType="email-address"
@@ -109,9 +138,7 @@ export default class Registration extends Component {
 								<Btn1
 									lableStyle={{ ...headings.h6M, color: white }}
 									lable={languages.register}
-									onPress={() => {
-										this.props.navigation.navigate('Login');
-									}}
+									onPress={this.SignUpSubmit}
 								/>
 							
 						</View>

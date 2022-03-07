@@ -14,9 +14,40 @@ export default class Login extends Component {
 	state = {
 		email: '',
 		password: '',
-
+		userToken: '',
 		isSubmitting: false
 	};
+	LoginSubmit =() =>{
+		console.log(this.state.email)
+		fetch('https://pharmacy.shahjahanxd.xyz/api/user/login', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    email: this.state.email,
+    password: this.state.password
+  })})
+  .then((response) => response.json())
+    .then((json) => {
+		
+		if(json.status == true){
+			this.setState({userToken: json.token})
+			this.props.navigation.replace('Home')
+			// const data = performTimeConsumingTask();
+		  }else{
+			alert('Login Failed')
+			alert(json.status)
+			
+		  }
+    })
+	.catch((error) => {
+		console.error(error);
+	  });
+
+
+	}
 
 	toggleSecure = () => {
 		myref.current.toggleSecure();
@@ -41,23 +72,9 @@ export default class Login extends Component {
 
 					<View>
 
-						<InputField lable="Email Address"></InputField>
-						<InputField lable="Password"></InputField>
-						{/* <InputField
-							keyboardType="email-address"
-							lable="Email"
-							icon={<Fontisto name="email" size={20} color={Colors.gray} />}
-							// onChange={(txt) => this.setState({ email: txt })}
-						/>
-
-						<InputField
-							// ref={myref}
-							// oniconPress={this.toggleSecure}
-							// isSecure={true}
-							lable="Password"
-							icon={<Entypo name="eye" size={20} color={Colors.gray} />}
-							// onChange={(txt) => this.setState({ password: txt })}
-						/> */}
+						<InputField onChange={(text) => {this.setState({email: text})}} lable="Email Address"> </InputField>
+						<InputField onChange={(text) => {this.setState({password: text})}} isSecure={true} lable="Password"></InputField>
+						
 
 						<TouchableOpacity
 							onPress={() => {
@@ -73,7 +90,7 @@ export default class Login extends Component {
 							<Btn1
 								lableStyle={{ ...headings.h6M, color: white }}
 								lable={languages.login}
-								onPress={() => this.props.navigation.replace('Home')}
+								onPress={this.LoginSubmit}
 							/>
 							<TouchableOpacity
 							onPress={() => {
