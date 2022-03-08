@@ -15,6 +15,8 @@ import InsuranceForm2 from './src/home_screens/InsuranceForm2';
 import InsuranceForm from './src/home_screens/InsuranceForm';
 import Profile from './src/home_screens/Profile';
 // Home_Screens
+import DoctorsInfo from './src/home_screens/DoctorsInfo/DoctorsInfo';
+import AvailableDoctors from './src/home_screens/AvailableDoctors/Doctors';
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
 
@@ -105,6 +107,8 @@ const App = () => {
 				
 				<Stack.Screen name="Home" component={MyBottomTabs} />
 				<Stack.Screen name="AvailableStores" component={AvailableStores} />
+				<Stack.Screen name="AvailableDoctors" component={AvailableDoctors} />
+				<Stack.Screen name="DoctorsInfo" component={DoctorsInfo} />
 				<Stack.Screen name="Insurance" component={InsuranceForm} />
 				<Stack.Screen name="Insurance2" component={InsuranceForm2} />
 				<Stack.Screen name="Cart" component={ProgressBar} />

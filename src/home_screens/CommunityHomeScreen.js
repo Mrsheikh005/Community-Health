@@ -55,7 +55,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 7,
 					name: 'TeleHealth & VirtualHealth',
-					
+					onpress: 'AvailableDoctors',
 					image: require('../assets/images/TH.jpg')
 				},
 				{
@@ -84,6 +84,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 12,
 					name: 'Order Pharmacy',
+					onpress: 'AvailableStores',
 					image: require('../assets/images/OP.jpg')
 				},
 				
