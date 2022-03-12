@@ -18,90 +18,48 @@ const myref1 = React.createRef();
 
 export default class Registration extends Component {
 	state = {
-		fName: '',
-		// lName: '',
+		name: '',
 		email: '',
 		password: '',
 		confirmPassword: '',
-		userToken:'',
+		userToken: '',
 		isSubmitting: false,
 		isPolicyChecked: false
 	};
-	SignUpSubmit =() =>{
-		
+	SignUpSubmit = () => {
 		fetch('https://pharmacy.shahjahanxd.xyz/api/user/register', {
-  method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    name: this.state.fName,
-    email: this.state.email,
-	password: this.state.password,
-	password_confirmation: this.state.confirmPassword
-  })
-})
-  .then((response) => response.json())
-    .then((json) => {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				name: this.state.name,
+				email: this.state.email,
+				password: this.state.password,
+				password_confirmation: this.state.confirmPassword
+			})
+		})
+			.then((response) => response.json())
+			.then((json) => {
+				if (json.status == true) {
+					this.props.navigation.navigate('Login');
 
-		if(json.status == true){
-			this.props.navigation.navigate('Login')
-			
-			// const data = performTimeConsumingTask();
-		  }else{
-			alert('SignUp Failed')
-			console.log(json.errors.name)
-			console.log(json.errors.email)
-			console.log(json.errors.password)
-		  }
-    })
-	.catch((error) => {
-		console.error(error);
-	  });
-
-
-	}
+					// const data = performTimeConsumingTask();
+				} else {
+					alert('SignUp Failed');
+					console.log(json.errors.name);
+					console.log(json.errors.email);
+					console.log(json.errors.password);
+				}
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
 
 	toggleSecure = (ref) => {
 		ref.current.toggleSecure();
-	};
-
-	handleSignup = async () => {
-		const { name, email, password, confirmPassword } = this.state;
-
-		if (name == '' || email == '' || password == '' || confirmPassword == '') {
-			alert('empty field not allowed');
-			return;
-		}
-		this.setState({ isLoading: true });
-		const webHandler = new WebHandler();
-
-		// const bodyParams = { email:email, password: password }
-		const bodyParams = new FormData();
-		bodyParams.append('name', name);
-		bodyParams.append('email', email);
-		bodyParams.append('password', password);
-		bodyParams.append('confirmPassword', confirmPassword);
-		webHandler.sendPostDataRequest(
-			Routes.REGISTER_USER,
-			bodyParams,
-			(resp) => {
-				const prefs = new PrefHandler();
-				prefs.createSession(resp.data, resp.token, (isCreated) => {
-					if (isCreated) {
-						console.log('Employee Data:', resp.data), console.log('Employee Token', resp.token);
-						this.props.navigation.navigate('ForgotPassword');
-					} else {
-						alert('something went wrong..');
-					}
-				});
-			},
-			(errorData) => {
-				alert(errorData);
-				this.setState({ isLoading: false });
-			}
-		);
 	};
 
 	render() {
@@ -130,19 +88,26 @@ export default class Registration extends Component {
 								this.setState({ name: txt });
 							}}
 						/>
-					
+
+						<InputField
+							keyboardType="email-address"
+							lable="Email"
+							icon={<Fontisto name="email" size={20} color={Colors.gray} />}
+							value={this.state.email}
+							onChange={(txt) => {
+								this.setState({ email: txt });
+							}}
+						/>
 
 						<InputField
 							keyboardType="email-address"
 							lable="Password"
-							icon={<Fontisto name="email" size={20} color={Colors.gray} />}
+							icon={<Feather name="lock" size={20} color={Colors.gray} />}
 							value={this.state.password}
 							onChange={(txt) => {
 								this.setState({ password: txt });
 							}}
 						/>
-
-						{/* <InputField keyboardType="phone-pad" ref={myref} oniconPress={this.toggleSecure} lable="Phone Number" icon={<AntDesign name="phone" size={20} color={Colors.gray} />} /> */}
 
 						<InputField
 							ref={myref1}
@@ -156,18 +121,6 @@ export default class Registration extends Component {
 							}}
 						/>
 
-						{/* <InputField
-							isSecure={true}
-							ref={myref}
-							oniconPress={() => this.toggleSecure(myref)}
-							isSecure={true}
-							lable="Confirm Password"
-							icon={<Feather name="lock" size={20} color={Colors.gray} />}
-							onChange={(txt) => {
-								this.setState({ confirmPassword: txt });
-							}}
-						/> */}
-
 						<View style={{ marginHorizontal: 35 }}>
 							<Mycheckbox
 								onPress={(val) => {
@@ -178,13 +131,11 @@ export default class Registration extends Component {
 						</View>
 
 						<View style={{ marginBottom: 20, marginTop: 30 }}>
-						
-								<Btn1
-									lableStyle={{ ...headings.h6M, color: white }}
-									lable={languages.register}
-									onPress={this.SignUpSubmit}
-								/>
-							
+							<Btn1
+								lableStyle={{ ...headings.h6M, color: white }}
+								lable={languages.register}
+								onPress={this.SignUpSubmit}
+							/>
 						</View>
 					</View>
 				</ScrollView>

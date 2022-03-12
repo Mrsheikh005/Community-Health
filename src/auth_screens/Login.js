@@ -53,40 +53,6 @@ export default class Login extends Component {
 		myref.current.toggleSecure();
 	};
 
-	handleLogin = async () => {
-		const { email, password } = this.state;
-
-		if (email == '' || password == '') {
-			alert('empty field not allowed');
-			return;
-		}
-		this.setState({ isLoading: true });
-		const webHandler = new WebHandler();
-
-		// const bodyParams = { email:email, password: password }
-		const bodyParams = new FormData();
-		bodyParams.append('email', email);
-		bodyParams.append('password', password);
-		webHandler.sendGetDataRequest(
-			Routes.LOGIN_USER,
-			bodyParams,
-			(resp) => {
-				const prefs = new PrefHandler();
-				prefs.createSession(resp.data, resp.token, (isCreated) => {
-					if (isCreated) {
-						console.log('Employee Data:', resp.data), console.log('Employee Token', resp.token);
-						this.props.navigation.dispatch(StackActions.replace('Home'));
-					} else {
-						alert('something went wrong..');
-					}
-				});
-			},
-			(errorData) => {
-				alert(errorData);
-				this.setState({ isLoading: false });
-			}
-		);
-	};
 
 	render() {
 		const { isSubmitting } = this.state;
