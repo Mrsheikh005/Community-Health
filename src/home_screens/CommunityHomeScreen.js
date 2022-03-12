@@ -55,7 +55,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 7,
 					name: 'TeleHealth & VirtualHealth',
-					
+					onpress: 'AvailableDoctors',
 					image: require('../assets/images/TH.jpg')
 				},
 				{
@@ -84,6 +84,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 12,
 					name: 'Order Pharmacy',
+					onpress: 'AvailableStores',
 					image: require('../assets/images/OP.jpg')
 				},
 				
@@ -112,9 +113,9 @@ export default class CommunityHomeScreen extends Component {
 				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
 				<Text style={{color:secondryColor, fontSize:14,fontWeight:'bold',alignSelf:'center',width:'30%'}}>Deliver To UAE</Text>
 				</View>
-				<View style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
+				<TouchableOpacity onPress={() => {this.props.navigation.navigate('Cart')}} style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
 				<Feather name="shopping-cart" size={30} color={secondryColor} style={{alignSelf:'center'}}/>
-				</View>
+				</TouchableOpacity>
 				</View>
 				
 				<View stye={{flex:1}}>
@@ -126,8 +127,8 @@ export default class CommunityHomeScreen extends Component {
 								   style={{  marginHorizontal: 5, paddingBottom: 2 }}
 							   >
 								   <View style={{ flexDirection: 'row',flex:1 }}>
-									   <View style={{ alignItems: 'center',flex:1,borderWidth:0.5,borderRadius:150,overflow:'hidden',borderColor:primaryColor}}>
-										   <Image style={{width:'100%',height:180, }} source={item.image} />
+									   <View style={{ alignItems: 'center',height:150,width:150,flex:1,borderWidth:0.5,borderRadius:1000,overflow:'hidden',borderColor:primaryColor}}>
+										   <Image  source={item.image} resizeMode={'contain'} style={{alignSelf:'center'}} />
 									   </View>
 			   
 									   

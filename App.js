@@ -6,7 +6,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 // Auth_Screens
 import Splash from './src/auth_screens/Splash';
-import OnBoardingScreens from './src/auth_screens/OnBoardingScreens';
+import ProgressBar from './src/home_screens/ProgressBar';
 import Login from './src/auth_screens/Login';
 import SignUp from './src/auth_screens/SignUp';
 import ForgotPassword from './src/auth_screens/ForgotPassword';
@@ -15,6 +15,8 @@ import InsuranceForm2 from './src/home_screens/InsuranceForm2';
 import InsuranceForm from './src/home_screens/InsuranceForm';
 import Profile from './src/home_screens/Profile';
 // Home_Screens
+import DoctorsInfo from './src/home_screens/DoctorsInfo/DoctorsInfo';
+import AvailableDoctors from './src/home_screens/AvailableDoctors/Doctors';
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
 
@@ -96,21 +98,20 @@ const App = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
-				<Stack.Screen name="Splash" component={Splash} />
-				{/* <Stack.Screen name="OnBoardingScreens" component={OnBoardingScreens} /> */}
-				{/* <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
+				{/* <Stack.Screen name="Splash" component={Splash} />
+				
 				<Stack.Screen name="Login" component={Login} />
 				<Stack.Screen name="SignUp" component={SignUp} />
 				<Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-				<Stack.Screen name="OTPScreen" component={OTPScreen} />
-				{/* <Stack.Screen name="CreateNewPassword" component={CreateNewPassword} /> */}
-				{/* <Stack.Screen name="Congrats" component={Congrats} /> */}
-				{/* <Stack.Screen name="NotAvailable" component={NotAvailable} /> */}
+				<Stack.Screen name="OTPScreen" component={OTPScreen} /> */}
+				
 				<Stack.Screen name="Home" component={MyBottomTabs} />
 				<Stack.Screen name="AvailableStores" component={AvailableStores} />
+				<Stack.Screen name="AvailableDoctors" component={AvailableDoctors} />
+				<Stack.Screen name="DoctorsInfo" component={DoctorsInfo} />
 				<Stack.Screen name="Insurance" component={InsuranceForm} />
 				<Stack.Screen name="Insurance2" component={InsuranceForm2} />
-				{/* <Stack.Screen name="MechanicInfo" component={MechanicInfo} /> */}
+				<Stack.Screen name="Cart" component={ProgressBar} />
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
 			</Stack.Navigator>

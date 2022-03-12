@@ -63,7 +63,9 @@ const Colors = {
     red: "rgb(155,0,0)",
     iconColor : "#949494",
     green : "#2dd24c",
-    white:"white"
+    white:"white",
+    primaryColor:'#2dd24c',
+    secondryColor:'#0c6d9d'
 }
 
 const form = StyleSheet.create({
