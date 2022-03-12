@@ -127,7 +127,7 @@ export default class CommunityHomeScreen extends Component {
 								   style={{  marginHorizontal: 5, paddingBottom: 2 }}
 							   >
 								   <View style={{ flexDirection: 'row',flex:1 }}>
-									   <View style={{ alignItems: 'center',height:150,width:150,flex:1,borderWidth:0.5,borderRadius:1000,overflow:'hidden',borderColor:primaryColor}}>
+									   <View style={{ alignItems: 'center',height:150,width:150,flex:1,borderWidth:0.5,borderRadius:10,overflow:'hidden',borderColor:primaryColor}}>
 										   <Image  source={item.image} resizeMode={'contain'} style={{alignSelf:'center'}} />
 									   </View>
 			   

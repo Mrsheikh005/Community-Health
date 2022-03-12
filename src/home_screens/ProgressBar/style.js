@@ -194,6 +194,20 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         flex: 1, 
         left:'5%',
+
+        // paddingTop: 12 ,
+
+        // backgroundColor:'red'
+    },
+    MostSellingProductsDescriptionSection0:{ 
+        alignContent: 'center',
+        flex: 1, 
+        // left:'5%',
+        marginVertical:'2%',
+        marginHorizontal:'2%',
+        paddingHorizontal:'2%',
+        borderWidth:0.5,
+        
         // paddingTop: 12 ,
 
         // backgroundColor:'red'
