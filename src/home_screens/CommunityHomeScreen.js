@@ -4,7 +4,7 @@ import { Colors, primaryColor, secondryColor } from '../utils/Styles';
 import { useNavigation } from "@react-navigation/native";
 // import IconHeader from '../reuseables/IconHeader';
 // import IconHeader from '../reuseables/IconHeader';
-import TransparentHeader from '../reuseables/TransparentHeader/TransparentHeader';
+import HomeHeader from '../reuseables/HomeHeader';
 
 import Feather from 'react-native-vector-icons/Feather';
 import StarRating from 'react-native-star-rating';
@@ -21,42 +21,42 @@ export default class CommunityHomeScreen extends Component {
 					id: 1,
 					name: 'Shop Medical Product',
 					onpress: 'AvailableStores',
-					image: require('../assets/images/Shop.jpg')
+					image: require('../assets/images/MP.png')
 				},
 				{
 					id: 2,
 					name: 'Offer & Promotions',
 					
-					image: require('../assets/images/Offer.png')
+					image: require('../assets/images/Offers.png')
 				},
 				{
 					id: 3,
 					name: 'Home Healthcare',
 					
-					image: require('../assets/images/HH.jpg')
+					image: require('../assets/images/HH.png')
 				},
 				{
 					id: 4,
 					name: 'Cosmetic Offers',
-					image: require('../assets/images/CO.jpg')
+					image: require('../assets/images/CO.png')
 				},
 				{
 					id: 5,
 					name: 'Medical Tourism',
-					image: require('../assets/images/MT.jpg')
+					image: require('../assets/images/MT.png')
 				},
 				{
 					
 					id: 6,
 					name: 'Job Portal',
 					
-					image: require('../assets/images/JP.jpg')
+					image: require('../assets/images/JP.png')
 				},
 				{
 					id: 7,
 					name: 'TeleHealth & VirtualHealth',
 					onpress: 'AvailableDoctors',
-					image: require('../assets/images/TH.jpg')
+					image: require('../assets/images/TS.png')
 				},
 				{
 					id: 8,
@@ -74,7 +74,7 @@ export default class CommunityHomeScreen extends Component {
 					id: 10,
 					name: 'Buy Medical Insurance',
 					onpress: 'Insurance',
-					image: require('../assets/images/BM.jpg')
+					image: require('../assets/images/BM.png')
 				},
 				{
 					id: 11,
@@ -85,7 +85,7 @@ export default class CommunityHomeScreen extends Component {
 					id: 12,
 					name: 'Order Pharmacy',
 					onpress: 'AvailableStores',
-					image: require('../assets/images/OP.jpg')
+					image: require('../assets/images/OP.png')
 				},
 				
 			]
@@ -107,7 +107,8 @@ export default class CommunityHomeScreen extends Component {
 		return (
 			<SafeAreaView style={{ flex: 1,paddingBottom:'25%',justifyContent:'space-between',backgroundColor:Colors.white}}>
 				
-				<View style={{width:'100%',height:'8%',flexDirection:'row' ,justifyContent:'space-between',paddingHorizontal:'2%'}}>
+				<HomeHeader/>
+				{/* <View style={{width:'100%',height:'8%',elevation:15,flexDirection:'row' ,justifyContent:'space-between',paddingHorizontal:'2%'}}>
 				<Image style={{resizeMode:'contain',height:'100%',width:'25%' }} source={require('../assets/images/Logo.png')} />
 				<View style={{flexDirection:'row' ,justifyContent:'space-evenly'}}>
 				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
@@ -116,25 +117,25 @@ export default class CommunityHomeScreen extends Component {
 				<TouchableOpacity onPress={() => {this.props.navigation.navigate('Cart')}} style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
 				<Feather name="shopping-cart" size={30} color={secondryColor} style={{alignSelf:'center'}}/>
 				</TouchableOpacity>
-				</View>
+				</View> */}
 				
 				<View stye={{flex:1}}>
-					<Text style={{fontSize:25,color:Colors.black,alignSelf:'center',marginBottom:'5%',fontWeight:'bold'}}>Categories</Text>
+					<Text style={{fontSize:20,color:Colors.black, alignSelf:'center',paddingBottom:'2%',fontWeight:'bold',marginTop:'2%'}}>Browse among categories</Text>
 					<FlatList horizontal={false} numColumns={2} style={{height:'100%'}} renderItem={({ item }) => (
-                               <View style={{ flex: 1, marginBottom: 10,paddingVertical:'2%',marginHorizontal:'2%', backgroundColor: Colors.white }}>
+                               <View style={{ borderRadius:10,overflow:'hidden', flex: 1, marginVertical: 10,marginHorizontal:'2%', backgroundColor: Colors.white, elevation:15 }}>
 							   <TouchableOpacity
 								   onPress={() => {this.props.navigation.navigate(item.onpress)}}
-								   style={{  marginHorizontal: 5, paddingBottom: 2 }}
+								   style={{    borderColor:secondryColor,overflow:'hidden'}}
 							   >
 								   <View style={{ flexDirection: 'row',flex:1 }}>
-									   <View style={{ alignItems: 'center',height:150,width:150,flex:1,borderWidth:0.5,borderRadius:10,overflow:'hidden',borderColor:primaryColor}}>
-										   <Image  source={item.image} resizeMode={'contain'} style={{alignSelf:'center'}} />
+									   <View style={{ alignItems: 'center',height:150,width:150,flex:1,overflow:'hidden',alignSelf:'center',justifyContent:'center'}}>
+										   <Image  source={item.image} resizeMode={'center'} style={{alignSelf:'center'}} />
 									   </View>
 			   
 									   
 								   </View>
-								   <View style={{ zIndex: 10, width: '100%',justifyContent:'space-between' }}>
-									   <Text style={{fontSize:15,marginTop: '5%', fontWeight:'700', color:primaryColor,alignSelf:'center'}}>{item.name}</Text>
+								   <View style={{ zIndex: 10, width: '100%',justifyContent:'space-between',backgroundColor:secondryColor }}>
+									   <Text style={{fontSize:14,marginTop: '5%', fontWeight:'700', color:Colors.white, alignSelf:'center',paddingVertical:'5%'}}>{item.name}</Text>
 									   
 								   </View>
 							   </TouchableOpacity>
