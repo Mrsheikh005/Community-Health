@@ -107,7 +107,7 @@ export default class CommunityHomeScreen extends Component {
 		return (
 			<SafeAreaView style={{ flex: 1,paddingBottom:'25%',justifyContent:'space-between',backgroundColor:Colors.white}}>
 				
-				<View style={{width:'100%',height:'8%',flexDirection:'row' ,justifyContent:'space-between',paddingHorizontal:'2%'}}>
+				<View style={{width:'100%',height:'5%',flexDirection:'row' ,justifyContent:'space-between',paddingHorizontal:'2%'}}>
 				<Image style={{resizeMode:'contain',height:'100%',width:'25%' }} source={require('../assets/images/Logo.png')} />
 				<View style={{flexDirection:'row' ,justifyContent:'space-evenly'}}>
 				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
@@ -127,7 +127,7 @@ export default class CommunityHomeScreen extends Component {
 								   style={{  marginHorizontal: 5, paddingBottom: 2 }}
 							   >
 								   <View style={{ flexDirection: 'row',flex:1 }}>
-									   <View style={{ alignItems: 'center',height:150,width:150,flex:1,borderWidth:0.5,borderRadius:1000,overflow:'hidden',borderColor:primaryColor}}>
+									   <View style={{ alignItems: 'center',height:150,width:150,flex:1,borderWidth:0.5,borderRadius:10,overflow:'hidden',borderColor:secondryColor,borderBottomLeftRadius:50,borderTopRightRadius:20}}>
 										   <Image  source={item.image} resizeMode={'contain'} style={{alignSelf:'center'}} />
 									   </View>
 			   

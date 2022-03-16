@@ -20,6 +20,9 @@ import AvailableDoctors from './src/home_screens/AvailableDoctors/Doctors';
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
 
+//MapScrren
+import Mapscreen from './src/home_screens/Mapscreen';
+
 // Libraries
 
 import ShoppingForm from './src/home_screens/ShoppingForm';
@@ -113,6 +116,8 @@ const App = () => {
 				<Stack.Screen name="Insurance2" component={InsuranceForm2} />
 				<Stack.Screen name="Cart" component={ProgressBar} />
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
+				<Stack.Screen name="MapScreen" component={Mapscreen} />
+				
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
 			</Stack.Navigator>
 		</NavigationContainer>
