@@ -17,10 +17,12 @@ function HomeHeader({ title = "", isIcon }) {
 				<TouchableOpacity onPress={() => {navigation.navigate('Cart')}} style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
 				<Feather name="heart" size={30} color={primaryColor} style={{alignSelf:'center'}}/>
 				</TouchableOpacity>
+				<TouchableOpacity onPress={()=>(navigation.navigate('MapScreen'))}>
                 <View style={{flexDirection:'row' ,justifyContent:'space-evenly'}}>
 				<Text style={{color:Colors.black, fontSize:16,fontWeight:'bold',alignSelf:'center'}}>Delivering To</Text>
 				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
                 </View>
+				</TouchableOpacity>
 				<TouchableOpacity onPress={() => {navigation.navigate('Cart')}} style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
 				<Feather name="shopping-cart" size={30} color={primaryColor} style={{alignSelf:'center'}}/>
 				</TouchableOpacity>
