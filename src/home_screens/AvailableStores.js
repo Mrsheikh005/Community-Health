@@ -21,12 +21,13 @@ export default class AvailableStores extends Component {
 	}
 	componentWillMount() {
 		// this.renderMyData();
-		console.log(this.state.email);
+		;
 		return fetch('https://pharmacy.shahjahanxd.xyz/api/shop/get-all-shops')
 			.then((response) => response.json())
 			.then((json) => {
 				//   return json.movies;
 				this.setState({ Data: json.data });
+				// console.log("https://pharmacy.shahjahanxd.xyz/images/" + this.state.Data.shopProfile )
 			})
 			.catch((error) => {
 				console.error(error);
@@ -56,7 +57,9 @@ export default class AvailableStores extends Component {
 									marginBottom: 10,
 									paddingVertical: '2%',
 									marginHorizontal: '2%',
-									backgroundColor: Colors.white
+									backgroundColor: Colors.white,
+									borderRadius:10,
+									
 								}}
 							>
 								<TouchableOpacity
@@ -67,13 +70,13 @@ export default class AvailableStores extends Component {
 								>
 									<View style={{ flexDirection: 'row', flex: 1 }}>
 										<View style={{ alignItems: 'center', flex: 1 }}>
-											<Image style={{ width: '100%', height: 150 }} source={item.shopProfile} />
+											<Image style={{ width: '100%', height: 150 }} source={{uri:'https://pharmacy.shahjahanxd.xyz/images/' + item.shopProfile} }/>
 										</View>
 									</View>
 									<View
 										style={{
 											zIndex: 10,
-											width: '40%',
+											width: '90%',
 											left: '5%',
 											justifyContent: 'space-between'
 										}}
@@ -88,6 +91,7 @@ export default class AvailableStores extends Component {
 										>
 											{item.name}
 										</Text>
+										<View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
 										<StarRating
 											disabled={false}
 											maxStars={5}
@@ -95,12 +99,13 @@ export default class AvailableStores extends Component {
 											selectedStar={(rating) => this.onStarRatingPress(rating)}
 											starSize={12}
 											halfStarEnabled={true}
-											containerStyle={{ marginHorizontal: '0%', top: '1%', marginTop: '15%' }}
+											containerStyle={{ marginHorizontal: '0%', top: '1%', marginTop: '15%',alignSelf:'center'}}
 											starStyle={{ color: Colors.golden }}
 										/>
-										<Text style={{ fontSize: 15, fontWeight: '700', color: Colors.green }}>
+										<Text style={{ fontSize: 15, fontWeight: '700', color: Colors.green,alignSelf:'center' }}>
 											{item.address}
 										</Text>
+										</View>
 									</View>
 								</TouchableOpacity>
 							</View>
