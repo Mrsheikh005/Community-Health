@@ -37,13 +37,13 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<array>
-    <string>googlechromes</string>
-    <string>comgooglemaps</string>
-</array>
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-  <string>Please Allow Location service use</string>
-  <key>NSLocationAlwaysUsageDescription</key>
-  <string>Please Allow Location service use</string>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Please Allow Location service use</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Please Allow Location service use</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

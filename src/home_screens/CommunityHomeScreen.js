@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 // import IconHeader from '../reuseables/IconHeader';
 // import IconHeader from '../reuseables/IconHeader';
 import HomeHeader from '../reuseables/HomeHeader';
-
+import Mapscreen from './Mapscreen';
 import Feather from 'react-native-vector-icons/Feather';
 import StarRating from 'react-native-star-rating';
 
