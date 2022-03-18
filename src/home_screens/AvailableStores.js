@@ -7,7 +7,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import TransparentHeader from '../reuseables/TransparentHeader/TransparentHeader';
 
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Modal from "react-native-modal";
 import StarRating from 'react-native-star-rating';
 
 export default class AvailableStores extends Component {
@@ -15,6 +15,7 @@ export default class AvailableStores extends Component {
 		super(props);
 		this.state = {
 			starCount: 3.5,
+			isModalVisible: false,
 			// Array of Data (items)
 			Data: []
 		};
@@ -83,7 +84,7 @@ export default class AvailableStores extends Component {
 							>
 								<TouchableOpacity
 									onPress={() => {
-										this.props.navigation.navigate('ShoppingForm');
+										this.setState({isModalVisible: true});
 									}}
 									style={{ marginHorizontal: 0, paddingBottom: 2 }}
 								>
@@ -128,6 +129,11 @@ export default class AvailableStores extends Component {
 										</View>
 									</View>
 								</TouchableOpacity>
+								<Modal animationOut='bounceOut' animationIn='bounceIn' isVisible={this.state.isModalVisible}>
+									<View style={{ flex: 1, height:'70%' }}>
+										<Text>I am the modal content!</Text>
+										</View>
+										</Modal>
 							</View>
 						)}
 						data={Data}
