@@ -1,8 +1,16 @@
 import React, { Component, useState, useEffect } from 'react';
-import {View,StyleSheet} from 'react-native'
+import {View,StyleSheet,Text,SafeAreaView,TouchableOpacity} from 'react-native'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import Geolocation from "@react-native-community/geolocation";
 import { Marker } from 'react-native-maps';
+import HomeHeader from '../../reuseables/HomeHeader';
+import Arrow from 'react-native-vector-icons/AntDesign'
+import TransparentHeader from '../../reuseables/TransparentHeader/TransparentHeader';
+import { primaryColor,secondryColor,Colors,headings,textColor,white} from '../../utils/Styles';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { Input } from 'react-native-elements';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 
 export default class Mapscreen extends Component {
     constructor(props) {
@@ -18,8 +26,63 @@ export default class Mapscreen extends Component {
           }
           
   render() {
+    const { getloc } = this.props
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
+            <View style={{zIndex:1,}}>
+            <TransparentHeader title='Select your Location'/>
+
+            <GooglePlacesAutocomplete
+                textInputProps={{ placeholderTextColor: textColor, ...headings.h4, textAlignVertical: "auto" }}
+                textInputHide={false}
+                fetchDetails={true}
+                placeholder={'Find an address'}
+                renderLeftButton={() => <FontAwesome5 name="search-location" size={22} color={primaryColor} />}
+                enablePoweredByContainer={false}
+                autoFillOnNotFound={true}
+                currentLocation={true}
+                fetchDetails={true}
+                // getCurrentLocation={(val)=>{console.log(val)}}
+                styles={{
+                    container: {
+                        marginTop:'10%',
+                        width:'100%',
+                        alignSelf:'center',
+                        right:'2%',
+                        flex:1
+                    },
+                    textInputContainer: {
+                        backgroundColor: '#F2F2F2',
+                        alignItems: 'center',
+                     borderRadius: 8,
+                        borderColor: secondryColor,
+                        borderWidth: 0.3,
+                        // marginTop:'19%'
+                    },
+                    textInput: {
+                        height: 38,
+                        color: textColor,
+                        borderRadius: 8,
+                        backgroundColor: '#F2F2F2',
+                        
+                    },
+                    listView: { width: '100%', marginVertical: 5, backgroundColor: white, borderRadius: 8, zIndex: 1 },
+                    description: { ...headings.h5 },
+                    row: { backgroundColor: Colors.primaryColorDim }
+                }}
+                onPress={(data, details = null) => {
+                    // 'details' is provided when fetchDetails = true
+                    getloc({
+                        latitude: details.geometry.location.lat,
+                        longitude: details.geometry.location.lng,
+                    });
+                }}
+                query={{
+                    key: 'AIzaSyCA6YMrH8nL8Tq03KeNm_ufcVDDcSwp0nc',
+                    language: 'en',
+                }}
+            />
+            </View>
                <MapView
         		provider={PROVIDER_GOOGLE}
                   style={styles.map}
@@ -30,12 +93,12 @@ export default class Mapscreen extends Component {
                   zoomEnabled={true}
                   loadingEnabled={true}
                 >
-                    
+                  
                     <Marker
                     coordinate={this.state.initialPosition}
                     />
                 </MapView>
-              </View>
+              </SafeAreaView>
       
     )
   }
@@ -44,13 +107,12 @@ export default class Mapscreen extends Component {
 const styles = StyleSheet.create({
     container: {
       ...StyleSheet.absoluteFillObject,
-      height: 900,
-      width: 420,
-      justifyContent: 'flex-end',
-      alignItems: 'center',
+    
+      
     },
     map: {
       ...StyleSheet.absoluteFillObject,
+
     },
    });
 
