@@ -55,18 +55,18 @@ export default class AvailableStores extends Component {
 								style={{
 									flex: 1,
 									marginBottom: 10,
-									paddingVertical: '2%',
+									paddingBottom: '2%',
 									marginHorizontal: '2%',
 									backgroundColor: Colors.white,
 									borderRadius:10,
-									
+									overflow:'hidden'
 								}}
 							>
 								<TouchableOpacity
 									onPress={() => {
 										this.props.navigation.navigate('ShoppingForm');
 									}}
-									style={{ marginHorizontal: 5, paddingBottom: 2 }}
+									style={{ marginHorizontal: 0, paddingBottom: 2 }}
 								>
 									<View style={{ flexDirection: 'row', flex: 1 }}>
 										<View style={{ alignItems: 'center', flex: 1 }}>
