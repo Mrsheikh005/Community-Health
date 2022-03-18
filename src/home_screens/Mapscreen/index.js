@@ -42,7 +42,7 @@ export default class Mapscreen extends Component {
                 autoFillOnNotFound={true}
                 currentLocation={true}
                 fetchDetails={true}
-                // getCurrentLocation={(val)=>{console.log(val)}}
+                getCurrentLocation={(val)=>{console.log('==============>',val)}}
                 styles={{
                     container: {
                         marginTop:'10%',
@@ -57,6 +57,7 @@ export default class Mapscreen extends Component {
                      borderRadius: 8,
                         borderColor: secondryColor,
                         borderWidth: 0.3,
+                        flex:1
                         // marginTop:'19%'
                     },
                     textInput: {
@@ -107,11 +108,13 @@ export default class Mapscreen extends Component {
 const styles = StyleSheet.create({
     container: {
       ...StyleSheet.absoluteFillObject,
+      flex:1
     
       
     },
     map: {
       ...StyleSheet.absoluteFillObject,
+      flex:1
 
     },
    });
