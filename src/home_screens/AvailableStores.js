@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, Image, FlatList, SafeAreaView } from 'react-native';
+import { Text, View, TouchableOpacity, Image, FlatList, SafeAreaView, TextInput} from 'react-native';
 import { Colors, primaryColor } from '../utils/Styles';
+import InputField1 from '../reuseables/InputField1';
 import { useNavigation } from '@react-navigation/native';
-// import IconHeader from '../reuseables/IconHeader';
-// import IconHeader from '../reuseables/IconHeader';
+import Feather from 'react-native-vector-icons/Feather';
 
 import TransparentHeader from '../reuseables/TransparentHeader/TransparentHeader';
 
@@ -22,7 +22,7 @@ export default class AvailableStores extends Component {
 	componentWillMount() {
 		// this.renderMyData();
 		;
-		return fetch('https://pharmacy.shahjahanxd.xyz/api/shop/get-all-shops')
+		return fetch('https://communityhealth.ae/api/v1/products')
 			.then((response) => response.json())
 			.then((json) => {
 				//   return json.movies;
@@ -43,10 +43,28 @@ export default class AvailableStores extends Component {
 	render() {
 		const { Data } = this.state;
 		return (
-			<SafeAreaView style={{ flex: 1, justifyContent: 'space-between' }}>
+			<SafeAreaView style={{ flex: 1, justifyContent: 'space-between', marginBottom:'20%'}}>
 				<TransparentHeader title="Shop Medical Products" />
 
 				<View stye={{}}>
+				<TextInput placeholder="Shop Medical Products" placeholderTextColor={Colors.gray} style={{
+        height: 50,
+        width: '95%',
+        backgroundColor:Colors.white,
+        borderWidth: 0.5,
+        borderColor: Colors.PRIMARY_02_4,
+        paddingLeft: '2%',
+        marginVertical: '4%',
+        borderRadius: 5,
+		elevation:10,
+        // marginHorizontal: '1%',
+		alignSelf:'center'
+
+
+    }}> 
+	<Feather name="search" size={22} color={primaryColor}/>
+	</TextInput>
+
 					<FlatList
 						horizontal={false}
 						numColumns={2}
@@ -54,12 +72,13 @@ export default class AvailableStores extends Component {
 							<View
 								style={{
 									flex: 1,
-									marginBottom: 10,
+									marginVertical: 10,
 									paddingBottom: '2%',
 									marginHorizontal: '2%',
 									backgroundColor: Colors.white,
 									borderRadius:10,
-									overflow:'hidden'
+									overflow:'hidden',
+									elevation:10
 								}}
 							>
 								<TouchableOpacity
@@ -70,12 +89,13 @@ export default class AvailableStores extends Component {
 								>
 									<View style={{ flexDirection: 'row', flex: 1 }}>
 										<View style={{ alignItems: 'center', flex: 1 }}>
-											<Image style={{ width: '100%', height: 150 }} source={{uri:'https://pharmacy.shahjahanxd.xyz/images/' + item.shopProfile} }/>
+											<Image style={{ width: '100%', height: 120 }} source={{uri:'https://communityhealth.ae/public/' + item.thumbnail_image} }/>
 										</View>
 									</View>
 									<View
 										style={{
 											zIndex: 10,
+											marginTop:'3%',
 											width: '90%',
 											left: '5%',
 											justifyContent: 'space-between'
@@ -83,7 +103,7 @@ export default class AvailableStores extends Component {
 									>
 										<Text
 											style={{
-												fontSize: 15,
+												fontSize: 14,
 												marginTop: '5%',
 												fontWeight: '700',
 												color: Colors.black
@@ -95,15 +115,15 @@ export default class AvailableStores extends Component {
 										<StarRating
 											disabled={false}
 											maxStars={5}
-											rating={this.state.starCount}
+											rating={item.rating}
 											selectedStar={(rating) => this.onStarRatingPress(rating)}
-											starSize={12}
+											starSize={14}
 											halfStarEnabled={true}
-											containerStyle={{ marginHorizontal: '0%', top: '1%', marginTop: '15%',alignSelf:'center'}}
+											containerStyle={{ marginHorizontal: '0%',alignSelf:'center'}}
 											starStyle={{ color: Colors.golden }}
 										/>
-										<Text style={{ fontSize: 15, fontWeight: '700', color: Colors.green,alignSelf:'center' }}>
-											{item.address}
+										<Text style={{ fontSize: 13, fontWeight: '700', color: Colors.green,alignSelf:'center' }}>
+											{'AED  '+ item.base_price}
 										</Text>
 										</View>
 									</View>
