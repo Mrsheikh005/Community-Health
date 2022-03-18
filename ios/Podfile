@@ -23,6 +23,8 @@ target 'CommunityHealth' do
 rn_maps_path = '../node_modules/react-native-maps'
 pod 'react-native-google-maps', :path => rn_maps_path
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'CommunityHealthTests' do
     inherit! :complete
     # Pods for testing
