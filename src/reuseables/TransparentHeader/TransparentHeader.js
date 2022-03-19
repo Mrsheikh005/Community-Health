@@ -14,7 +14,7 @@ function TransparentHeader({ title = "", isIcon }) {
   return (
     <View style={[styles.mainContainer]}>
       {isIcon != false && (
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity style={{alignSelf:'center'}} onPress={() => navigation.goBack()}>
           <FontAwesome5 name="chevron-left" color={Colors.green} size={20} />
         </TouchableOpacity>
       ) 

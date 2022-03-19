@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Colors } from "../../utils/Styles";
 // import { Colors, Fonts } from "../../../Theme";
 
 const styles = StyleSheet.create({
@@ -7,10 +8,12 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flexDirection: "row",
-    paddingVertical: 10,
+    height:'8%',
     paddingHorizontal:20,
     alignContent: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    elevation:20,backgroundColor:Colors.white,
+    borderBottomLeftRadius:15,borderBottomRightRadius:15
   },
   titleView: {
     flex: 1,
