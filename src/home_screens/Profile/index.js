@@ -7,6 +7,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Colors, primaryColor } from "../../utils/Styles";
 import { Avatar } from "react-native-elements";
 import Btn1 from "../../reuseables/Btn1";
+import { ImageOrVideo } from "react-native-image-crop-picker";
 
 const Profile = (props) => {
     const navigation = useNavigation();
