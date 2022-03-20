@@ -43,13 +43,14 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 5,
 					name: 'Medical Tourism',
+					onpress: 'Medical_Tourism',
 					image: require('../assets/images/MT.png')
 				},
 				{
 					
 					id: 6,
 					name: 'Job Portal',
-					
+					onpress:'JobPortal',
 					image: require('../assets/images/JP.png')
 				},
 				{
@@ -79,12 +80,13 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 11,
 					name: 'Medical Education',
+					onpress: 'Medical_Eduction',
 					image: require('../assets/images/ME.png')
 				},
 				{
 					id: 12,
 					name: 'Order Pharmacy',
-					onpress: 'AvailableStores',
+					onpress: 'ShoppingForm',
 					image: require('../assets/images/OP.png')
 				},
 				

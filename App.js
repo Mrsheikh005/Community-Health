@@ -28,11 +28,13 @@ import Mapscreen from './src/home_screens/Mapscreen';
 import ShoppingForm from './src/home_screens/ShoppingForm';
 import { Colors, secondryColor } from './src/utils/Styles';
 import AntIcon from "react-native-vector-icons/AntDesign";
+import JobPortal from './src/home_screens/JobPortal';
+import Medical_Eduction from './src/home_screens/Medical_Eduction';
+import Medical_Tourism from './src/home_screens/Medical_Tourism';
 // import AvailableSstores from './src/home_screens/AvailableStoresjs';
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
-
 function MyBottomTabs() {
 	const [text, setText] = React.useState('');
 	
@@ -118,6 +120,10 @@ const App = () => {
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				<Stack.Screen name="MapScreen" component={Mapscreen} />
 				<Stack.Screen name="Product" component={Product} />
+				<Stack.Screen name="JobPortal" component={JobPortal}/>
+				<Stack.Screen name="Medical_Eduction" component={Medical_Eduction}/>
+				<Stack.Screen name="Medical_Tourism" component={Medical_Tourism}/>
+
 				
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
 			</Stack.Navigator>
