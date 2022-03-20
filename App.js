@@ -29,7 +29,8 @@ import ShoppingForm from './src/home_screens/ShoppingForm';
 import { Colors, secondryColor } from './src/utils/Styles';
 import AntIcon from "react-native-vector-icons/AntDesign";
 // import AvailableSstores from './src/home_screens/AvailableStoresjs';
-
+import AuthScreen from './src/components/AuthScreen'
+import VideoScreen from './src/components/VideoScreen'
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
@@ -117,7 +118,10 @@ const App = () => {
 				<Stack.Screen name="Cart" component={ProgressBar} />
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				<Stack.Screen name="MapScreen" component={Mapscreen} />
-				
+
+				<Stack.Screen name="AuthScreen" component={AuthScreen} />
+				<Stack.Screen name="VideoScreen" component={VideoScreen} />
+
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
 			</Stack.Navigator>
 		</NavigationContainer>

@@ -18,7 +18,7 @@ function HomeHeader({ title = "", isIcon }) {
 				<Feather name="heart" size={30} color={primaryColor} style={{alignSelf:'center'}}/>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={()=>(navigation.navigate('MapScreen'))}>
-                <View style={{flexDirection:'row' ,justifyContent:'space-evenly'}}>
+                <View style={{flexDirection:'row' ,justifyContent:'space-evenly', top:20}}>
 				<Text style={{color:Colors.black, fontSize:16,fontWeight:'bold',alignSelf:'center'}}>Delivering To</Text>
 				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
                 </View>

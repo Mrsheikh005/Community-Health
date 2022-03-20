@@ -185,7 +185,7 @@ export default class DoctorsInfo extends Component {
 											backgroundColor: Colors.primaryColor
 										}}
 										onPress={() => {
-											this.props.navigation.navigate('BookingMechanic');
+											this.props.navigation.navigate('AuthScreen');
 										}}
 									>
 										<Text style={{ color: 'white', fontWeight: 'bold', fontSize: 14 }}>
