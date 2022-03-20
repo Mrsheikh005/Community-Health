@@ -8,7 +8,7 @@ import Btn1 from '../reuseables/Btn1';
 import PrefHandler from '../data/PrefHandler';
 import Routes from '../remote/Routes';
 import WebHandler from '../remote/WebHandler';
-
+// import PrefHandler from '../data/PrefHandler';
 const myref = React.createRef();
 export default class Login extends Component {
 	state = {
@@ -18,6 +18,7 @@ export default class Login extends Component {
 		isSubmitting: false
 	};
 	LoginSubmit =() =>{
+		let pref= new PrefHandler()
 		console.log(this.state.email)
 		fetch('https://pharmacy.shahjahanxd.xyz/api/user/login', {
   method: 'POST',
@@ -34,6 +35,7 @@ export default class Login extends Component {
 		
 		if(json.status == true){
 			this.setState({userToken: json.token})
+			pref.createSession(this.state.email, this.state.userToken, json.status)
 			this.props.navigation.replace('Home')
 			// const data = performTimeConsumingTask();
 		  }else{

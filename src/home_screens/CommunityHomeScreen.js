@@ -54,7 +54,7 @@ export default class CommunityHomeScreen extends Component {
 				},
 				{
 					id: 7,
-					name: 'TeleHealth & VirtualHealth',
+					name: 'TeleHealth',
 					onpress: 'AvailableDoctors',
 					image: require('../assets/images/TS.png')
 				},
