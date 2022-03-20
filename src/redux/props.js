@@ -1,11 +1,7 @@
 const ReducersProps = (state) => {
-    return {
-        language: state.languageReducer.language,
-        notificationsCount: state.notificationsReducer.count,
-        cart: state.cartReducer.cart,
-        currency: state.currencyReducer.currency,
-        profile: state.profileReducer.profile,
-    }
-}
+	return {
+		cart: state.cartReducer.cart
+	};
+};
 
-export default ReducersProps
+export default ReducersProps;
