@@ -227,7 +227,7 @@ export default class DoctorsInfo extends Component {
 											backgroundColor: Colors.primaryColor
 										}}
 										onPress={() => {
-											
+											this.props.navigation.navigate('VideoScreen')
 										}}
 									>
 										<Text style={{ color: 'white', fontWeight: 'bold', fontSize: 14 }}>

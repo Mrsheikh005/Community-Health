@@ -11,7 +11,7 @@ export default class VideoScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    this._session = null;
+    // this._session = null;
     this.opponentsIds = props.navigation.getParam('opponentsIds');
 
     this.state = {
