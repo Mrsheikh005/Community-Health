@@ -127,5 +127,31 @@ export default App;
 
 
 
+// import { Text, View } from 'react-native'
+// import React, { Component } from 'react'
+// import ConnectyCube from "react-native-connectycube";
+
+
+// export default class App extends Component {
+// 	constructor(props){
+// 		super(props)
+// 		const CREDENTIALS = {
+// 			appId: 6080,
+// 			authKey: "HrVvZF8Qgj3crLz",
+// 			authSecret: "HPZgsbW7bBg5HJT"
+// 		  };
+		  
+// 		  ConnectyCube.init(CREDENTIALS);
+		  
+// 	}
+//   render() {
+// 	return (
+// 	  <View>
+// 		<Text>App</Text>
+// 	  </View>
+// 	)
+//   }
+// }
+
 
  

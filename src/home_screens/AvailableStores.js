@@ -84,7 +84,7 @@ export default class AvailableStores extends Component {
 							>
 								<TouchableOpacity
 									onPress={() => {
-										this.setState({isModalVisible: true});
+										this.setState({isModalVisible: false});
 									}}
 									style={{ marginHorizontal: 0, paddingBottom: 2 }}
 								>
