@@ -43,7 +43,7 @@ const AvailableDoctors = () => {
 
 
 	useEffect(() =>{
-		fetch('https://communityhealth.ae/api/v1/products')
+		fetch('https://book-appointment.communityhealth.ae/api/all-doctors')
 				.then((response) => response.json())
 				.then((json) => {
 					//   return json.movies;
@@ -108,7 +108,7 @@ const AvailableDoctors = () => {
 								>
 									<View style={{ flexDirection: 'row', flex: 1 }}>
 										<View style={{ alignItems: 'center', flex: 1 }}>
-											<Image style={{ width: '100%', height: 120 }} source={{uri:'https://communityhealth.ae/public/' + item.thumbnail_image} }/>
+											<Image style={{ width: '100%', height: 150}} source={{uri:'https://book-appointment.communityhealth.ae/public/images/' + item.Image} }/>
 										</View>
 									</View>
 									<View
@@ -124,13 +124,23 @@ const AvailableDoctors = () => {
 									>
 										<Text
 											style={{
-												fontSize: 14,
+												fontSize: 16,
 												marginTop: '5%',
 												fontWeight: '700',
 												color: Colors.black
 											}}
 										>
-											{item.name}
+											{item.Fname}
+										</Text>
+										<Text
+											style={{
+												fontSize: 14,
+												marginTop: '1%',
+												fontWeight: '700',
+												color: Colors.black
+											}}
+										>
+											{item.Qualifications}
 										</Text>
 										<View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
 										<StarRating
