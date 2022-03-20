@@ -101,12 +101,12 @@ const App = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
-				{/* <Stack.Screen name="Splash" component={Splash} />
+				<Stack.Screen name="Splash" component={Splash} />
 				
 				<Stack.Screen name="Login" component={Login} />
 				<Stack.Screen name="SignUp" component={SignUp} />
 				<Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-				<Stack.Screen name="OTPScreen" component={OTPScreen} /> */}
+				<Stack.Screen name="OTPScreen" component={OTPScreen} />
 				
 				<Stack.Screen name="Home" component={MyBottomTabs} />
 				<Stack.Screen name="AvailableStores" component={AvailableStores} />
