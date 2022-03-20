@@ -16,29 +16,56 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import InputField1 from "../../reuseables/InputField";
 import { InputField } from "../../reuseables/InputField";
-// import ImagePicker from 'react-native-image-crop-picker';
+import ImagePicker from 'react-native-image-crop-picker';
+
+
+
+const checkPermission = async () => {
+    if (Platform.OS === "android") {
+      try {
+        const grants = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.CAMERA,
+        ]);
+        console.log("write external stroage", grants);
+        if (
+          grants["android.permission.CAMERA"] ===
+          PermissionsAndroid.RESULTS.GRANTED
+        ) {
+          console.log("Permissions granted");
+        } else {
+          console.log("All required permissions not granted");
+          return;
+        }
+      } catch (err) {
+        console.log(" CHECK FOR THE ERROR ", err);
+        return;
+      }
+    }
+  };
+
+
+
 const ShoppingForm = () => {
-    // const Picking = () => {
-    //     ImagePicker.openPicker({
-    //         multiple: true
-    //     }).then(images => {
-    //         console.log(images);
-    //         setImage(images[0].path)
-    //     });
-    // }
+    
+    
     const [image, setImage] = useState('')
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
-    const [items, setItems] = useState([
-        { label: 'Fashion and Beauty', value: 'apple' },
-        { label: 'Any Other Thing', value: 'banana' }
-    ]);
-    const [opens, setOpen1] = useState(false);
-    const [values, setValue1] = useState(null);
-    const [itemss, setItems1] = useState([
-        { label: 'USD', value: 'apple' },
-        { label: 'AED', value: 'banana' }
-    ]);
+    const [name, setname] = useState('')
+    const [email, setemail] = useState('')
+    const [Description, setDescription] = useState('')
+
+
+    // const [open, setOpen] = useState(false);
+    // const [value, setValue] = useState(null);
+    // const [items, setItems] = useState([
+    //     { label: 'Fashion and Beauty', value: 'apple' },
+    //     { label: 'Any Other Thing', value: 'banana' }
+    // ]);
+    // const [opens, setOpen1] = useState(false);
+    // const [values, setValue1] = useState(null);
+    // const [itemss, setItems1] = useState([
+    //     { label: 'USD', value: 'apple' },
+    //     { label: 'AED', value: 'banana' }
+    // ]);
 
     const navigation = useNavigation()
     return (
@@ -62,7 +89,16 @@ const ShoppingForm = () => {
                                     borderWidth: 1, justifyContent: 'center', alignContent: 'center', alignItems: 'center', borderStyle: "dashed", marginBottom: 10, width: "90%", margin: '5%', aspectRatio: 2, borderRadius: 1,
                                 }}>
                                     <Ionicons name="images" size={20} color="#3da5e0"></Ionicons>
-                                    <Text style={{ fontSize: 20, color: '#3da5e0' }}>
+                                    <Text style={{ fontSize: 20, color: '#3da5e0' }} onPress={()=>{
+                                        ImagePicker.openPicker({
+                                            multiple: true
+                                        }).then(images => {
+                                            console.log(images);
+                                            setImage(images[0].path)
+                                        });
+
+
+                                    }}>
                                         Add upto 5 images
                                     </Text>
                                     <Text style={{ width: 200, textAlign: 'center'}}>
@@ -77,10 +113,13 @@ const ShoppingForm = () => {
                        <InputField lable="Your Name"
                         placeholder="SomeOne"
                         // keyboardType="email-address"
+                        onChange={(text) => {setname({name: text})}}
+                        
                         />
                         <InputField lable="Your Email"
                         placeholder="example@domain.com"
                         keyboardType="email-address"
+                        onChange={(text) => {setemail({email: text})}}
                         />
                         
                         <View style={styles.InputStyle}>
@@ -88,7 +127,10 @@ const ShoppingForm = () => {
                                 <Text style={styles.HeadingText}>Product Discription</Text>
                                 <TouchableOpacity><Text style={styles.MaxWords}>500 Words</Text></TouchableOpacity>
                             </View>
-                            <View style={styles.DiscriptionContainerStyle}><TextInput style={styles.Inputs}></TextInput></View>
+                            <View style={styles.DiscriptionContainerStyle}><TextInput style={styles.Inputs}
+                            onChange={(text) => {setDescription({Description: text})}}
+                            
+                            ></TextInput></View>
                         </View>
                         
                         
@@ -98,7 +140,8 @@ const ShoppingForm = () => {
                 </View>
 
             </ScrollView>
-            <Btn1 lable={"Submit"} lableStyle={{color:Colors.white,fontSize: 14,fontWeight: '700'}}/>
+            <Btn1 lable={"Submit"} lableStyle={{color:Colors.white,fontSize: 14,fontWeight: '700'}} />
+            
         </View>
     )
 }
