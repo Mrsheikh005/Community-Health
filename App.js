@@ -19,7 +19,7 @@ import DoctorsInfo from './src/home_screens/DoctorsInfo/DoctorsInfo';
 import AvailableDoctors from './src/home_screens/AvailableDoctors/Doctors';
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
-
+import Product from './src/home_screens/Product';
 //MapScrren
 import Mapscreen from './src/home_screens/Mapscreen';
 
@@ -117,6 +117,7 @@ const App = () => {
 				<Stack.Screen name="Cart" component={ProgressBar} />
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				<Stack.Screen name="MapScreen" component={Mapscreen} />
+				<Stack.Screen name="Product" component={Product} />
 				
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
 			</Stack.Navigator>
