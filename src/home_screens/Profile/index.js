@@ -7,9 +7,11 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Colors, primaryColor } from "../../utils/Styles";
 import { Avatar } from "react-native-elements";
 import Btn1 from "../../reuseables/Btn1";
+import PrefHandler from "../../data/PrefHandler";
 
 const Profile = (props) => {
     const navigation = useNavigation();
+    let pref= new PrefHandler();
     return (
         <View style={{ flex: 1, backgroundColor: Colors.white }}>
             <SafeAreaView />
@@ -101,7 +103,11 @@ const Profile = (props) => {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
-            <Btn1 lable={"LogOut"} lableStyle={{color:Colors.white,fontSize: 14,fontWeight: '700'}}/>
+            <Btn1 lable={"LogOut"} onPress={()=>{
+                pref.deleteSession()
+                console.log('I Am Logout')
+                navigation.navigate('Login')
+            }} lableStyle={{color:Colors.white,fontSize: 14,fontWeight: '700'}}/>
         </View>
     )
 }

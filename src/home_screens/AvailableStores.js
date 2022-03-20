@@ -1,50 +1,98 @@
-import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, Image, FlatList, SafeAreaView, TextInput} from 'react-native';
+import React, { Component,useState,useEffect} from 'react';
+import { Text, View, TouchableOpacity, Image, FlatList, SafeAreaView, TextInput,Modal,AsyncStorage} from 'react-native';
 import { Colors, primaryColor } from '../utils/Styles';
 import InputField1 from '../reuseables/InputField1';
 import { useNavigation } from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/Feather';
-
+import HomeHeader from '../reuseables/HomeHeader';
 import TransparentHeader from '../reuseables/TransparentHeader/TransparentHeader';
 
-import Modal from "react-native-modal";
+// import Modal from "react-native-modal";
 import StarRating from 'react-native-star-rating';
+import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
-export default class AvailableStores extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			starCount: 3.5,
-			isModalVisible: false,
-			// Array of Data (items)
-			Data: []
-		};
-	}
-	componentWillMount() {
-		// this.renderMyData();
-		;
-		return fetch('https://communityhealth.ae/api/v1/products')
-			.then((response) => response.json())
-			.then((json) => {
-				//   return json.movies;
-				this.setState({ Data: json.data });
-				// console.log("https://pharmacy.shahjahanxd.xyz/images/" + this.state.Data.shopProfile )
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-	}
 
-	onStarRatingPress(rating) {
-		this.setState({
-			starCount: rating
-		});
-	}
+	 const handleOnSelectItem = (item) => {
+		console.log('I Am Modal Function' + item.name)
+		return(
+			
+				<Modal style={{backgroundColor:Colors.white,flex:1}} animationType='slide'  visible={true}>
+									<View style={{ flex: 1 }}>
+										<Text style={{color:'black'}} >I am the modal content! {item.name}</Text>
+										</View>
+										</Modal>
+			
+		);
+	  };
+	
 
-	render() {
-		const { Data } = this.state;
-		return (
-			<SafeAreaView style={{ flex: 1, justifyContent: 'space-between', marginBottom:'20%'}}>
+
+
+
+
+
+
+const AvailableStores = () => {
+	const storeData = async (item) => {
+		console.log('I Am Asynced')
+		try {
+			const jsonValue = JSON.stringify(item)
+			await AsyncStorage.setItem('1', jsonValue)
+		  
+		  
+		} catch (error) {
+		  // Error saving data
+		}
+		navigation.navigate('Product')
+	  };
+
+	const [mounted, setMounted] = useState(false)
+	const [Data, setData] = useState()
+	const navigation = useNavigation();
+	// if(!mounted){
+	// 	// Code for componentWillMount here
+	// 	// This code is called only one time before intial render
+
+	// 	// const UNSAFE =()=> {
+	// 	// 	// this.renderMyData();
+	// 	// 	console.log('I Am Will Mount')
+	// 	// 	;
+	// 	// 	return 
+	// 		fetch('https://communityhealth.ae/api/v1/products')
+	// 			.then((response) => response.json())
+	// 			.then((json) => {
+	// 				//   return json.movies;
+	// 				// setData(json.data);
+					
+	// 				console.log('I Am Will Mount')
+	// 			})
+	// 			.catch((error) => {
+	// 				console.error(error);
+	// 			});
+	// 	// }
+	//   }
+
+
+
+	useEffect(() =>{
+		fetch('https://communityhealth.ae/api/v1/products')
+				.then((response) => response.json())
+				.then((json) => {
+					//   return json.movies;
+					setData(json.data);
+					
+					console.log('I Am Will Mount')
+				})
+				.catch((error) => {
+					console.error(error);
+				});
+	  },[])
+
+
+
+	return (
+	  <>
+		<SafeAreaView style={{ flex: 1, justifyContent: 'space-between', marginBottom:'20%'}}>
 				<TransparentHeader title="Shop Medical Products" />
 
 				<View stye={{}}>
@@ -69,24 +117,26 @@ export default class AvailableStores extends Component {
 					<FlatList
 						horizontal={false}
 						numColumns={2}
-						renderItem={({ item }) => (
-							<View
+						renderItem={({ item }) => {
+							// const [show, setShow] = useState(false);
+							return(
+								<View
 								style={{
 									flex: 1,
-									marginVertical: 10,
-									paddingBottom: '2%',
-									marginHorizontal: '2%',
-									backgroundColor: Colors.white,
-									borderRadius:10,
-									overflow:'hidden',
-									elevation:10
+									
 								}}
 							>
 								<TouchableOpacity
 									onPress={() => {
-										this.setState({isModalVisible: true});
+										storeData(item)
 									}}
-									style={{ marginHorizontal: 0, paddingBottom: 2 }}
+									style={{ marginHorizontal: 0, paddingBottom: 2 ,marginVertical: 10,
+										paddingBottom: '2%',
+										marginHorizontal: '2%',
+										backgroundColor: Colors.white,
+										borderRadius:10,
+										overflow:'hidden',
+										elevation:10}}
 								>
 									<View style={{ flexDirection: 'row', flex: 1 }}>
 										<View style={{ alignItems: 'center', flex: 1 }}>
@@ -129,18 +179,17 @@ export default class AvailableStores extends Component {
 										</View>
 									</View>
 								</TouchableOpacity>
-								<Modal animationOut='bounceOut' animationIn='bounceIn' isVisible={this.state.isModalVisible}>
-									<View style={{ flex: 1, height:'70%' }}>
-										<Text>I am the modal content!</Text>
-										</View>
-										</Modal>
+								
 							</View>
-						)}
+							);
+						}}
 						data={Data}
 					/>
 				</View>
 				<View />
 			</SafeAreaView>
-		);
-	}
-}
+	  </>
+	);
+  };
+  
+  export default AvailableStores;

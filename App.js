@@ -19,7 +19,7 @@ import DoctorsInfo from './src/home_screens/DoctorsInfo/DoctorsInfo';
 import AvailableDoctors from './src/home_screens/AvailableDoctors/Doctors';
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
-
+import Product from './src/home_screens/Product';
 //MapScrren
 import Mapscreen from './src/home_screens/Mapscreen';
 
@@ -102,12 +102,12 @@ const App = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
-				{/* <Stack.Screen name="Splash" component={Splash} />
+				<Stack.Screen name="Splash" component={Splash} />
 				
 				<Stack.Screen name="Login" component={Login} />
 				<Stack.Screen name="SignUp" component={SignUp} />
 				<Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-				<Stack.Screen name="OTPScreen" component={OTPScreen} /> */}
+				<Stack.Screen name="OTPScreen" component={OTPScreen} />
 				
 				<Stack.Screen name="Home" component={MyBottomTabs} />
 				<Stack.Screen name="AvailableStores" component={AvailableStores} />
@@ -118,10 +118,8 @@ const App = () => {
 				<Stack.Screen name="Cart" component={ProgressBar} />
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				<Stack.Screen name="MapScreen" component={Mapscreen} />
-
-				<Stack.Screen name="AuthScreen" component={AuthScreen} />
-				<Stack.Screen name="VideoScreen" component={VideoScreen} />
-
+				<Stack.Screen name="Product" component={Product} />
+				
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
 			</Stack.Navigator>
 		</NavigationContainer>
