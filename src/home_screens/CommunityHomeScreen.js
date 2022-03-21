@@ -84,7 +84,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 12,
 					name: 'Order Pharmacy',
-					onpress: 'AvailableStores',
+					onpress: 'AvailableShops',
 					image: require('../assets/images/OP.png')
 				},
 				

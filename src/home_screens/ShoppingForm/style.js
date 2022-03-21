@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
     },
     HeadingText: {
-        // color: colors.BLACK,
+        color: Colors.black,
         fontSize: 14,
         // fontFamily:
         fontWeight: 'bold',

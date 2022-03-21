@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ImageBackground, TouchableOpacity, Text, View, Image, TextInput, ScrollView } from "react-native";
 // import DropDownPicker from 'react-native-dropdown-picker';
 import styles from './style'
-import { Colors } from "../../utils/Styles";
+import { Colors, primaryColor } from "../../utils/Styles";
 // import { SimpleHeader } from "../../Components";
 import Btn1 from "../../reuseables/Btn1";
 import TransparentHeader from "../../reuseables/TransparentHeader/TransparentHeader";
@@ -63,10 +63,10 @@ const ShoppingForm = () => {
                                 }}>
                                     <Ionicons name="images" size={20} color="#3da5e0"></Ionicons>
                                     <Text style={{ fontSize: 20, color: '#3da5e0' }}>
-                                        Add upto 5 images
+                                        Add images
                                     </Text>
-                                    <Text style={{ width: 200, textAlign: 'center'}}>
-                                        In publishing and graphic design, Lorem ipsum is a placeholder.
+                                    <Text style={{ color:primaryColor, width: 200, textAlign: 'center'}}>
+                                        You can Add Priscription Image or Previous Relavent Document Image you desire
                                     </Text>
                                     
 

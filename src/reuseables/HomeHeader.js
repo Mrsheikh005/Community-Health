@@ -7,6 +7,7 @@ import { Colors, primaryColor, secondryColor } from "../utils/Styles";
 // import { Colors } from "../../../Theme";
 // import { TouchableOpacity } from "react-native-gesture-handler";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { connect } from "react-redux";
 
 function HomeHeader({ title = "", isIcon }) {
   const navigation = useNavigation();

@@ -5,6 +5,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import TransparentHeader from '../../reuseables/TransparentHeader/TransparentHeader';
 import { Colors } from '../../utils/Styles';
 import StarRating from 'react-native-star-rating';
+import { ScrollView } from 'react-native';
 
 export default class DoctorsInfo extends Component {
 	constructor(props) {
@@ -12,71 +13,7 @@ export default class DoctorsInfo extends Component {
 		this.state = {
 			starCount: 3.5,
 			// Array of Data (items)
-			Data: [
-				{
-					id: 1,
-					name: 'Dr.Ali',
-					experience: '2 years',
-					starcount: 4,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 2,
-					name: 'Dr.Babar',
-					experience: '2 years',
-					starcount: 4,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 3,
-					name: 'Dr.Amjad',
-					experience: '2 years',
-					starcount: 2,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 4,
-					name: 'Dr.Zeeshan',
-					experience: '2 years',
-					starcount: 4,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 5,
-					name: 'Dr.Mohis',
-					experience: '2 years',
-					starcount: 4.5,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 6,
-					name: 'Dr.Tafsheen',
-					experience: '2 years',
-					starcount: 3,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 7,
-					name: 'Dr.Huzaifa',
-					experience: '2 years',
-					starcount: 4,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 8,
-					name: 'Dr.Aleem',
-					experience: '2 years',
-					starcount: 4,
-					image: require('../../assets/images/Avatar.png')
-				},
-				{
-					id: 9,
-					name: 'Dr.Abraar',
-					experience: '2 years',
-					starcount: 5,
-					image: require('../../assets/images/Avatar.png')
-				},
-			]
+			
 		};
 	}
 
@@ -90,6 +27,7 @@ export default class DoctorsInfo extends Component {
 		const { Data } = this.state;
 		return (
 			<SafeAreaView style={{ flex: 1,backgroundColor: 'white'}}>
+				
 				<TransparentHeader title="Doctor Profile" />
 				<View style={{ flex: 0, backgroundColor: 'white', top: '4%', marginBottom: 10 }}>
 					<View
@@ -199,12 +137,11 @@ export default class DoctorsInfo extends Component {
 								
 
 								<View>
-									<View style={{flexDirection:'row'}}>
+									<View style={{flexDirection:'row', alignSelf:'center'}}>
 									<TouchableOpacity
 										style={{
 											padding: 15,
-											paddingLeft: 60,
-											paddingRight: 60,
+											width:'45%',
 											borderRadius: 8,
 											marginRight:5,
 											backgroundColor:'#EAFFEE'
@@ -213,15 +150,14 @@ export default class DoctorsInfo extends Component {
 											
 										}}
 									>
-										<Text style={{ color: Colors.primaryColor, fontWeight: 'bold', fontSize: 14 }}>
+										<Text style={{ color: Colors.primaryColor,alignSelf:'center', fontWeight: 'bold', fontSize: 14 }}>
 											Inquire
 										</Text>
 									</TouchableOpacity>
 									<TouchableOpacity
 										style={{
 											padding: 15,
-											paddingLeft: 60,
-											paddingRight: 60,
+											width:'45%',
 											borderRadius: 8,
 											marginLeft:5,
 											backgroundColor: Colors.primaryColor
@@ -230,7 +166,7 @@ export default class DoctorsInfo extends Component {
 											
 										}}
 									>
-										<Text style={{ color: 'white', fontWeight: 'bold', fontSize: 14 }}>
+										<Text style={{ color: Colors.white, fontWeight: 'bold', fontSize: 14, alignSelf:'center' }}>
 											Book Now
 										</Text>
 									</TouchableOpacity>
@@ -253,40 +189,11 @@ export default class DoctorsInfo extends Component {
                         <Text style={{color:Colors.secondryColor, fontSize:15, fontWeight:'700',marginBottom:'3%'}}>
 						Asthama, Flana, Dhimkana Etc.
                         </Text>
-						<Text style={{ fontSize: 18, fontWeight:'700', color: Colors.black, fontWeight: 'bold' }}>
-							More like this
-						</Text>
-						<View>
-							<FlatList
-								horizontal={true}
-								showsHorizontalScrollIndicator={false}
-                                // numColumns={2}
-								renderItem={({ item }) => (
-                                    <View style={{ flex: 1, top: 20 }}>
-				<TouchableOpacity
-					style={{
-						backgroundColor:"#EEFFF1",
-						borderRadius: 8,
-						paddingVertical: 40,
-						paddingHorizontal: 20,
-						marginHorizontal: 5
-					}}
-				>
-					<View style={{ justifyContent: 'center', alignItems: 'center' }}>
-						<View style={{ bottom: 20 }}>
-							<Image source={item.image} />
-						</View>
-
-						<Text style={{ fontSize: 15, letterSpacing: 0.5, color: 'black' }}>{item.name}</Text>
-					</View>
-				</TouchableOpacity>
-			</View>
-                                )}
-								data={Data}
-							/>
-						</View>
+						
+						
 					</View>
 				</View>
+				
 			</SafeAreaView>
 		);
 	}
