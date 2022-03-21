@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
+import { createStore } from 'redux';
 // Navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -19,6 +20,7 @@ import DoctorsInfo from './src/home_screens/DoctorsInfo/DoctorsInfo';
 import AvailableDoctors from './src/home_screens/AvailableDoctors/Doctors';
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
+import AvailableShops from './src/home_screens/AvailableShops';
 import Product from './src/home_screens/Product';
 //MapScrren
 import Mapscreen from './src/home_screens/Mapscreen';
@@ -29,6 +31,16 @@ import ShoppingForm from './src/home_screens/ShoppingForm';
 import { Colors, secondryColor } from './src/utils/Styles';
 import AntIcon from "react-native-vector-icons/AntDesign";
 // import AvailableSstores from './src/home_screens/AvailableStoresjs';
+
+const initialState ={
+	Counter:1
+}
+
+const reducer = (state= initialState) =>{
+	 return state
+}
+
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -118,6 +130,7 @@ const App = () => {
 				<Stack.Screen name="ShoppingForm" component={ShoppingForm} />
 				<Stack.Screen name="MapScreen" component={Mapscreen} />
 				<Stack.Screen name="Product" component={Product} />
+				<Stack.Screen name="AvailableShops" component={AvailableShops} />
 				
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
 			</Stack.Navigator>
