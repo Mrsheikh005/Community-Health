@@ -27,7 +27,7 @@ export default class CommunityHomeScreen extends Component {
 					id: 2,
 					name: 'Offer & Promotions',
 					
-					image: require('../assets/images/Offers.png')
+					image: require('../assets/images/OP.png')
 				},
 				{
 					id: 3,
@@ -87,7 +87,8 @@ export default class CommunityHomeScreen extends Component {
 					id: 12,
 					name: 'Order Pharmacy',
 					onpress: 'ShoppingForm',
-					image: require('../assets/images/OP.png')
+					image: require('../assets/images/Offers.png')
+					// image: require('../assets/images/OP.png')
 				},
 				
 			]

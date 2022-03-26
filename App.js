@@ -31,6 +31,8 @@ import AntIcon from "react-native-vector-icons/AntDesign";
 import JobPortal from './src/home_screens/JobPortal';
 import Medical_Eduction from './src/home_screens/Medical_Eduction';
 import Medical_Tourism from './src/home_screens/Medical_Tourism';
+import FeatureProduct from './src/home_screens/FeatureProduct';
+import MegaDeals from './src/home_screens/MegaDeals';
 // import AvailableSstores from './src/home_screens/AvailableStoresjs';
 
 const Stack = createNativeStackNavigator();
@@ -61,7 +63,7 @@ function MyBottomTabs() {
 	  />
 	  <Tab.Screen
 		name="Featured"
-		component={CommunityHomeScreen}
+		component={FeatureProduct}
 		options={{
 		  tabBarLabel: 'Featured',
 		  tabBarIcon: ({ color }) => (
@@ -71,7 +73,7 @@ function MyBottomTabs() {
 	  />
 	  <Tab.Screen
 		name="Deals"
-		component={CommunityHomeScreen}
+		component={MegaDeals}
 		options={{
 		  tabBarLabel: 'MegaDeals',
 		  tabBarIcon: ({ color }) => (
