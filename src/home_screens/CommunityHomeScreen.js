@@ -32,13 +32,14 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 3,
 					name: 'Home Healthcare',
-					
+					onpress: 'HealthCare',
 					image: require('../assets/images/HH.png')
 				},
 				{
 					id: 4,
 					name: 'Cosmetic Offers',
-					image: require('../assets/images/CO.png')
+					image: require('../assets/images/CO.png'),
+					onpress:'Cosmetic_Offers'
 				},
 				{
 					id: 5,
@@ -62,15 +63,15 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 8,
 					name: 'HealthProviders in UAE',
-					
+					onpress:'HealthProviders',
 					image: require('../assets/images/HP.png')
 				},
-				{
-					id: 9,
-					name: 'Health Transport',
+				// {
+				// 	id: 9,
+				// 	name: 'Health Transport',
 					
-					image: require('../assets/images/HT.png')
-				},
+				// 	image: require('../assets/images/HT.png')
+				// },
 				{
 					id: 10,
 					name: 'Buy Medical Insurance',

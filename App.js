@@ -20,6 +20,8 @@ import AvailableDoctors from './src/home_screens/AvailableDoctors/Doctors';
 import CommunityHomeScreen from './src/home_screens/CommunityHomeScreen';
 import AvailableStores from './src/home_screens/AvailableStores.js';
 import Product from './src/home_screens/Product';
+import Cosmetic_Offers from './src/home_screens/Cosmetic_Offers';
+import HealthCare from './src/home_screens/HealthCare';
 //MapScrren
 import Mapscreen from './src/home_screens/Mapscreen';
 
@@ -40,6 +42,7 @@ import PrivacyPolicy from './src/home_screens/Profile_Screen_Info/PrivacyPolicy'
 import ReturnPolicy from './src/home_screens/Profile_Screen_Info/ReturnPolicy';
 import OrderHistory from './src/home_screens/Profile_Screen_Info/OrderHistory';
 import Support from './src/home_screens/Profile_Screen_Info/Support';
+import HealthProviders from './src/home_screens/HealthProviders';
 // import AvailableSstores from './src/home_screens/AvailableStoresjs';
 
 const Stack = createNativeStackNavigator();
@@ -137,6 +140,9 @@ const App = () => {
 				<Stack.Screen name="Support" component={Support}/>
 				<Stack.Screen name="Privacy" component={PrivacyPolicy}/>
 				<Stack.Screen name="Return" component={ReturnPolicy}/>
+				<Stack.Screen name="Cosmetic_Offers" component={Cosmetic_Offers}/>
+				<Stack.Screen name="HealthCare" component={HealthCare}/>
+				<Stack.Screen name="HealthProviders" component={HealthProviders}/>
 				
 
 				
