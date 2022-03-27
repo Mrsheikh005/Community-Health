@@ -33,6 +33,13 @@ import Medical_Eduction from './src/home_screens/Medical_Eduction';
 import Medical_Tourism from './src/home_screens/Medical_Tourism';
 import FeatureProduct from './src/home_screens/FeatureProduct';
 import MegaDeals from './src/home_screens/MegaDeals';
+//////Profile Screens
+import MyAccount from './src/home_screens/Profile_Screen_Info/MyAccount';
+import Terms from './src/home_screens/Profile_Screen_Info/Terms';
+import PrivacyPolicy from './src/home_screens/Profile_Screen_Info/PrivacyPolicy';
+import ReturnPolicy from './src/home_screens/Profile_Screen_Info/ReturnPolicy';
+import OrderHistory from './src/home_screens/Profile_Screen_Info/OrderHistory';
+import Support from './src/home_screens/Profile_Screen_Info/Support';
 // import AvailableSstores from './src/home_screens/AvailableStoresjs';
 
 const Stack = createNativeStackNavigator();
@@ -111,7 +118,6 @@ const App = () => {
 				<Stack.Screen name="SignUp" component={SignUp} />
 				<Stack.Screen name="ForgotPassword" component={ForgotPassword} />
 				<Stack.Screen name="OTPScreen" component={OTPScreen} />
-				
 				<Stack.Screen name="Home" component={MyBottomTabs} />
 				<Stack.Screen name="AvailableStores" component={AvailableStores} />
 				<Stack.Screen name="AvailableDoctors" component={AvailableDoctors} />
@@ -125,6 +131,13 @@ const App = () => {
 				<Stack.Screen name="JobPortal" component={JobPortal}/>
 				<Stack.Screen name="Medical_Eduction" component={Medical_Eduction}/>
 				<Stack.Screen name="Medical_Tourism" component={Medical_Tourism}/>
+				<Stack.Screen name="MyAccount" component={MyAccount}/>
+				<Stack.Screen name="OrderHistory" component={OrderHistory}/>
+				<Stack.Screen name="Terms" component={Terms}/>
+				<Stack.Screen name="Support" component={Support}/>
+				<Stack.Screen name="Privacy" component={PrivacyPolicy}/>
+				<Stack.Screen name="Return" component={ReturnPolicy}/>
+				
 
 				
 				{/* <Stack.Screen name="BookingMechanic" component={BookingMechanic} /> */}
