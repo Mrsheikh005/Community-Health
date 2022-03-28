@@ -112,17 +112,6 @@ export default class CommunityHomeScreen extends Component {
 			<SafeAreaView style={{ flex: 1,paddingBottom:'25%',justifyContent:'space-between',backgroundColor:Colors.white}}>
 				
 				<HomeHeader/>
-				{/* <View style={{width:'100%',height:'8%',elevation:15,flexDirection:'row' ,justifyContent:'space-between',paddingHorizontal:'2%'}}>
-				<Image style={{resizeMode:'contain',height:'100%',width:'25%' }} source={require('../assets/images/Logo.png')} />
-				<View style={{flexDirection:'row' ,justifyContent:'space-evenly'}}>
-				<Image style={{resizeMode:'contain',height:'100%',width:'20%',borderRadius:5 }} source={require('../assets/images/flag.png')} />
-				<Text style={{color:secondryColor, fontSize:14,fontWeight:'bold',alignSelf:'center',width:'30%'}}>Deliver To UAE</Text>
-				</View>
-				<TouchableOpacity onPress={() => {this.props.navigation.navigate('Cart')}} style={{height:'100%',width:'20%',alignItems:'center',justifyContent:'center'}}>
-				<Feather name="shopping-cart" size={30} color={secondryColor} style={{alignSelf:'center'}}/>
-				</TouchableOpacity>
-				</View> */}
-				
 				<View stye={{flex:1}}>
 					<Text style={{fontSize:20,color:Colors.black, alignSelf:'center',paddingBottom:'2%',fontWeight:'bold',marginTop:'2%'}}>Browse among categories</Text>
 					<FlatList horizontal={false} numColumns={2} style={{height:'100%'}} renderItem={({ item }) => (

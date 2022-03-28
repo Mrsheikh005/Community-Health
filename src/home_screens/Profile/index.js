@@ -8,6 +8,28 @@ import { Colors, primaryColor } from "../../utils/Styles";
 import { Avatar } from "react-native-elements";
 import Btn1 from "../../reuseables/Btn1";
 import PrefHandler from "../../data/PrefHandler";
+import Icon from 'react-native-vector-icons/AntDesign'
+import ImagePicker from 'react-native-image-crop-picker';
+const pickIcon = async () => {
+    const image = await pickImageFromGallery()
+    image && setIcon(image?.uri);
+};
+
+const pickImageFromGallery = async (aspect = [1, 1]) => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: aspect,
+        quality: 1,
+    });
+    if (!result) return null;
+    const manipResult = await ImageManipulator.manipulateAsync(
+        result.uri,
+        [{resize: {width: 800}}],
+        {compress: 0.6, format: ImageManipulator.SaveFormat.JPEG}
+    );
+    return manipResult;
+}
 
 const Profile = (props) => {
     const navigation = useNavigation();
@@ -17,15 +39,19 @@ const Profile = (props) => {
             <SafeAreaView />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
+                    <TouchableOpacity onPress={()=>{pickImageFromGallery()}}>
+                       
                     <Avatar
                         
                         containerStyle={styles.avatar}
-                        size={80}
+                        size={100}
                         rounded
                         source={{
                             uri: "https://uifaces.co/our-content/donated/6MWH9Xi_.jpg",
                         }}
                     />
+                     <Icon name="camera" size={30} style={{marginLeft:'14%',marginTop:'-11%'}}/>
+                    </TouchableOpacity>
                     <Text style={styles.ProfileName}>John Doe</Text>
                     <Text style={styles.ProfileEmail}>John@example.com</Text>
                 </View>

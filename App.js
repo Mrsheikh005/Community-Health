@@ -25,7 +25,7 @@ import HealthCare from './src/home_screens/HealthCare';
 //MapScrren
 import Mapscreen from './src/home_screens/Mapscreen';
 
-// Libraries
+// LibrariesC
 
 import ShoppingForm from './src/home_screens/ShoppingForm';
 import { Colors, secondryColor } from './src/utils/Styles';

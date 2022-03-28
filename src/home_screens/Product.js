@@ -139,11 +139,11 @@ const Product = () => {
                     <Btn1
 								lableStyle={{ ...headings.h6M, color: primaryColor }}
 								lable='Add to Cart'
-								containerStyle={{backgroundColor:'#EAFFEE',paddingHorizontal:50}}
+								containerStyle={{backgroundColor:'#EAFFEE',paddingHorizontal:'10%'}}
 							/>
                         <Btn1
 								lableStyle={{ ...headings.h6M, color: Colors.white }}
-                                containerStyle={{paddingHorizontal:50}}
+                                containerStyle={{paddingHorizontal:'13%'}}
 								lable='Order Now'
 								// onPress={this.LoginSubmit}
 							/>
