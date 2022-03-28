@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import {
 	Alert,
 	SafeAreaView,
@@ -22,6 +22,17 @@ import { RadioButton } from 'react-native-paper';
 // import CountryPicker from 'rn-country-dropdown-picker';
 import PlusIcon from 'react-native-vector-icons/Entypo';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
+
+
+export const CartContext = createContext()
+
+
+
+
+
+
+
 const ProgressBar = (props) => {
 	const [ checked, setChecked ] = React.useState('first');
 
