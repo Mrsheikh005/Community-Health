@@ -22,6 +22,20 @@ export default class Mapscreen extends Component {
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
               },
+              markers: [{
+                title: 'hello',
+                coordinates: {
+                  latitude: 37.78825,
+                  longitude: -122.4324
+                },
+              },
+              {
+                title: 'hello2',
+                coordinates: {
+                  latitude: 38.78825,
+                  longitude: -123.4324
+                },  
+              }]
             };
           }
           
@@ -29,7 +43,7 @@ export default class Mapscreen extends Component {
     const { getloc } = this.props
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{zIndex:1,}}>
+            <View style={{}}>
             <TransparentHeader title='Select your Location'/>
 
             <GooglePlacesAutocomplete
@@ -37,10 +51,9 @@ export default class Mapscreen extends Component {
                 textInputHide={false}
                 fetchDetails={true}
                 placeholder={'Find an address'}
-                renderLeftButton={() => <FontAwesome5 name="search-location" size={22} color={primaryColor} />}
-                enablePoweredByContainer={false}
+                renderRightButton={() => <FontAwesome5 name="search-location" size={22} color={primaryColor} />}
+                enablePoweredByContainer={true}
                 autoFillOnNotFound={true}
-                currentLocation={true}
                 fetchDetails={true}
                 getCurrentLocation={(val)=>{console.log('==============>',val)}}
                 styles={{
@@ -48,8 +61,7 @@ export default class Mapscreen extends Component {
                         marginTop:'10%',
                         width:'100%',
                         alignSelf:'center',
-                        right:'2%',
-                        flex:1
+                        flex:1,marginHorizontal:'50%'
                     },
                     textInputContainer: {
                         backgroundColor: '#F2F2F2',
@@ -94,10 +106,12 @@ export default class Mapscreen extends Component {
                   zoomEnabled={true}
                   loadingEnabled={true}
                 >
-                  
-                    <Marker
-                    coordinate={this.state.initialPosition}
-                    />
+                  {this.state.markers.map(marker => (
+             <Marker
+            coordinate={marker.coordinates}
+            title={marker.title}
+                 />
+  ))}
                 </MapView>
               </SafeAreaView>
       
@@ -114,7 +128,6 @@ const styles = StyleSheet.create({
     },
     map: {
       ...StyleSheet.absoluteFillObject,
-      flex:1
 
     },
    });

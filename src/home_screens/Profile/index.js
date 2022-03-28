@@ -31,8 +31,8 @@ const Profile = (props) => {
                 </View>
                 
                 <View style={styles.AccountSection}>
-                    <Text style={styles.AccountSectionHeading}>My Account</Text>
-                    <TouchableOpacity style={styles.AccountSectionInformation}>
+                    <Text style={styles.AccountSectionHeading} onPress={()=>{navigation.navigate('MyAccount')}}>My Account</Text>
+                    <TouchableOpacity style={styles.AccountSectionInformation} onPress={()=>{navigation.navigate('OrderHistory')}}>
                         <Text style={styles.InformationSectionHeading}>Order History</Text>
                         <View style={styles.SubSectionStyling}>
                             
@@ -41,7 +41,7 @@ const Profile = (props) => {
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.AccountSectionInformation}>
+                    <TouchableOpacity style={styles.AccountSectionInformation} >
                         <Text style={styles.InformationSectionHeading}>My Wishtlist</Text>
                         <View>
                             <FontAwesome5 name="chevron-right" color={primaryColor} size={17} style={styles.MostSellingProductsIcon} />
@@ -59,25 +59,25 @@ const Profile = (props) => {
                 </View>
                 <View style={styles.GeneralSection}>
                     <Text style={styles.AccountSectionHeading}>General</Text>
-                    <TouchableOpacity style={styles.AccountSectionInformation}>
+                    <TouchableOpacity style={styles.AccountSectionInformation} onPress={()=>{navigation.navigate('Terms')}}>
                         <Text style={styles.InformationSectionHeading}>Terms & Conditions</Text>
                         <View>
                             <FontAwesome5 name="chevron-right" color={primaryColor} size={17} style={styles.MostSellingProductsIcon} />
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.AccountSectionInformation}>
+                    <TouchableOpacity style={styles.AccountSectionInformation} onPress={()=>{navigation.navigate('Return')}}>
                         <Text style={styles.InformationSectionHeading}>Return Policy</Text>
                         <View>
                             <FontAwesome5 name="chevron-right" color={primaryColor} size={17} style={styles.MostSellingProductsIcon} />
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.AccountSectionInformation}>
+                    <TouchableOpacity style={styles.AccountSectionInformation} onPress={()=>{navigation.navigate('Support')}}>
                         <Text style={styles.InformationSectionHeading}>Support Policy</Text>
                         <View>
                             <FontAwesome5 name="chevron-right" color={primaryColor} size={17} style={styles.MostSellingProductsIcon} />
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.AccountSectionInformation}>
+                    <TouchableOpacity style={styles.AccountSectionInformation} onPress={()=>{navigation.navigate('Privacy')}}>
                         <Text style={styles.InformationSectionHeading}>Privacy Policy</Text>
                         <View>
                             <FontAwesome5 name="chevron-right" color={primaryColor} size={17} style={styles.MostSellingProductsIcon} />
