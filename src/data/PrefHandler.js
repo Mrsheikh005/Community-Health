@@ -1,5 +1,4 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import PrefHandler from './PrefHandler';
 const SESSION_INFO_KEY = "@Session:Info"
 const SESSION_TOKEN_KEY = "@Session:Token"
 

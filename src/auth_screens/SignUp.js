@@ -11,22 +11,25 @@ import { InputField } from '../reuseables/InputField';
 import Btn1 from '../reuseables/Btn1';
 import Mycheckbox from '../reuseables/Mycheckbox';
 import PrefHandler from '../data/PrefHandler';
-import Routes from '../remote/Routes';
-import WebHandler from '../remote/WebHandler';
+import { renderLoadingView } from '../utils/Helpers';
+import { connect } from 'react-redux';
+import ReducersActions from '../redux/actions';
+import ReducersProps from '../redux/props';
 const myref = React.createRef();
 const myref1 = React.createRef();
 
-export default class Registration extends Component {
+class Registration extends Component {
 	state = {
 		name: '',
 		email: '',
 		password: '',
 		confirmPassword: '',
 		userToken: '',
-		isSubmitting: false,
+		isLoading: false,
 		isPolicyChecked: false
 	};
 	SignUpSubmit = () => {
+		this.setState({ isLoading: true });
 		fetch('https://pharmacy.shahjahanxd.xyz/api/user/register', {
 			method: 'POST',
 			headers: {
@@ -51,6 +54,7 @@ export default class Registration extends Component {
 					console.log(json.errors.name);
 					console.log(json.errors.email);
 					console.log(json.errors.password);
+					this.setState({ isLoading: false });
 				}
 			})
 			.catch((error) => {
@@ -130,12 +134,16 @@ export default class Registration extends Component {
 							/>
 						</View>
 
-						<View style={{ marginBottom: 20, marginTop: 30 }}>
-							<Btn1
-								lableStyle={{ ...headings.h6M, color: white }}
-								lable={languages.register}
-								onPress={this.SignUpSubmit}
-							/>
+						<View style={{ marginBottom: 20, marginTop: 30, marginHorizontal: 30 }}>
+							{this.state.isLoading ? (
+								renderLoadingView()
+							) : (
+								<Btn1
+									lableStyle={{ ...headings.h6M, color: white }}
+									lable={languages.register}
+									onPress={this.SignUpSubmit}
+								/>
+							)}
 						</View>
 					</View>
 				</ScrollView>
@@ -143,3 +151,4 @@ export default class Registration extends Component {
 		);
 	}
 }
+export default connect(ReducersProps, ReducersActions)(Registration);

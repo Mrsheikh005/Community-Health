@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/Feather';
 import HomeHeader from '../reuseables/HomeHeader';
 import TransparentHeader from '../reuseables/TransparentHeader/TransparentHeader';
-
+import { renderLoadingView } from '../utils/Helpers';
 // import Modal from "react-native-modal";
 import StarRating from 'react-native-star-rating';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
@@ -28,7 +28,7 @@ import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 
-
+	 
 
 
 
@@ -49,6 +49,8 @@ const FeatureProduct = () => {
 	const [mounted, setMounted] = useState(false)
 	const [Data, setData] = useState()
 	const navigation = useNavigation();
+	const [loading, setloading]= useState()
+
 	// if(!mounted){
 	// 	// Code for componentWillMount here
 	// 	// This code is called only one time before intial render
@@ -75,6 +77,8 @@ const FeatureProduct = () => {
 
 
 	useEffect(() =>{
+
+		setloading(true);
 		fetch('http://communityhealth.ae/api/v1/best-selling/products')
 				.then((response) => response.json())
 				.then((json) => {
@@ -85,6 +89,7 @@ const FeatureProduct = () => {
 				})
 				.catch((error) => {
 					console.error(error);
+					setloading(false);
 				});
 	  },[])
 
