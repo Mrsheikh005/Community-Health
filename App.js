@@ -35,6 +35,7 @@ import Medical_Eduction from './src/home_screens/Medical_Eduction';
 import Medical_Tourism from './src/home_screens/Medical_Tourism';
 import FeatureProduct from './src/home_screens/FeatureProduct';
 import MegaDeals from './src/home_screens/MegaDeals';
+import Promotions from './src/home_screens/Promotions';
 //////Profile Screens
 import MyAccount from './src/home_screens/Profile_Screen_Info/MyAccount';
 import Terms from './src/home_screens/Profile_Screen_Info/Terms';
@@ -43,6 +44,8 @@ import ReturnPolicy from './src/home_screens/Profile_Screen_Info/ReturnPolicy';
 import OrderHistory from './src/home_screens/Profile_Screen_Info/OrderHistory';
 import Support from './src/home_screens/Profile_Screen_Info/Support';
 import HealthProviders from './src/home_screens/HealthProviders';
+import { Provider } from 'react-redux'
+import store from './src/Redux/store'
 // import AvailableSstores from './src/home_screens/AvailableStoresjs';
 
 const Stack = createNativeStackNavigator();
@@ -143,6 +146,7 @@ const App = () => {
 				<Stack.Screen name="Cosmetic_Offers" component={Cosmetic_Offers}/>
 				<Stack.Screen name="HealthCare" component={HealthCare}/>
 				<Stack.Screen name="HealthProviders" component={HealthProviders}/>
+				<Stack.Screen name="Promotions" component={Promotions}/>
 				
 
 				

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, Image, SafeAreaView ,ActivityIndicator} from 'react-native';
 import { container, headings, primaryColor, Colors, white } from '../utils/Styles';
 import IconHeader from '../reuseables/IconHeader';
 import languages from '../assets/languages/English.json';
@@ -15,9 +15,11 @@ export default class Login extends Component {
 		email: '',
 		password: '',
 		userToken: '',
-		isSubmitting: false
+		isSubmitting: false,
+		Indicator: false
 	};
 	LoginSubmit =() =>{
+		this.setState({Indicator:true})
 		let pref= new PrefHandler()
 		console.log(this.state.email)
 		fetch('https://pharmacy.shahjahanxd.xyz/api/user/login', {
@@ -37,6 +39,7 @@ export default class Login extends Component {
 			this.setState({userToken: json.token})
 			pref.createSession(this.state.email, this.state.userToken, json.status)
 			this.props.navigation.replace('Home')
+			
 			// const data = performTimeConsumingTask();
 		  }else{
 			alert('Login Failed')
@@ -94,6 +97,7 @@ export default class Login extends Component {
 								lable={languages.login}
 								onPress={this.LoginSubmit}
 							/>
+							
 							<TouchableOpacity
 								onPress={() => {
 									this.props.navigation.navigate('SignUp');
@@ -103,6 +107,7 @@ export default class Login extends Component {
 									{languages.register}
 								</Text>
 							</TouchableOpacity>
+							<ActivityIndicator animating={this.state.Indicator} color={primaryColor} size={50} />
 						</View>
 					</View>
 				</ScrollView>

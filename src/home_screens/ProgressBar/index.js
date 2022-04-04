@@ -23,9 +23,10 @@ import { RadioButton } from 'react-native-paper';
 import PlusIcon from 'react-native-vector-icons/Entypo';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
+import { connect } from 'react-redux'
 
 
-export const CartContext = createContext()
+
 
 
 

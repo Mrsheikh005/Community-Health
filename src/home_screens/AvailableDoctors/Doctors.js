@@ -9,11 +9,12 @@ import TransparentHeader from '../../reuseables/TransparentHeader/TransparentHea
 
 // import Modal from "react-native-modal";
 import StarRating from 'react-native-star-rating';
+import { connect } from 'react-redux'
 
 
 
 	 
-	
+
 
 
 
@@ -96,6 +97,7 @@ const AvailableDoctors = () => {
 							>
 								<TouchableOpacity
 									onPress={() => {
+										addItemToCart
 										navigation.navigate('DoctorsInfo')
 									}}
 									style={{ marginHorizontal: 0, paddingBottom: 2 ,marginVertical: 10,
@@ -169,5 +171,11 @@ const AvailableDoctors = () => {
 	  </>
 	);
   };
+  const mapDispatchToProps = (dispatch) => {
+    return {
+        addItemToCart: (product) => dispatch({ type: 'ADD_TO_CART', payload: product })
+    }
+}
+
   
-  export default AvailableDoctors;
+  export default connect(null,mapDispatchToProps)(AvailableDoctors);

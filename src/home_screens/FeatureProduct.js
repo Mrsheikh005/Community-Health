@@ -1,5 +1,5 @@
 import React, { Component,useState,useEffect} from 'react';
-import { Text, View, TouchableOpacity, Image, FlatList, SafeAreaView, TextInput,Modal,AsyncStorage} from 'react-native';
+import { Text, View, TouchableOpacity, Image, FlatList, SafeAreaView, TextInput,Modal,AsyncStorage,ActivityIndicator} from 'react-native';
 import { Colors, primaryColor } from '../utils/Styles';
 import InputField1 from '../reuseables/InputField1';
 import { useNavigation } from '@react-navigation/native';
@@ -49,6 +49,7 @@ const FeatureProduct = () => {
 	const [mounted, setMounted] = useState(false)
 	const [Data, setData] = useState()
 	const navigation = useNavigation();
+	const [Indicator,setIndicator]= useState(true)
 	// if(!mounted){
 	// 	// Code for componentWillMount here
 	// 	// This code is called only one time before intial render
@@ -80,6 +81,7 @@ const FeatureProduct = () => {
 				.then((json) => {
 					//   return json.movies;
 					setData(json.data);
+					setIndicator(false)
 					
 					console.log('I Am Will Mount')
 				})
@@ -92,8 +94,9 @@ const FeatureProduct = () => {
 
 	return (
 	  <>
-		<SafeAreaView style={{ flex: 1, justifyContent: 'space-between', marginBottom:'20%'}}>
+		<SafeAreaView style={{ flex: 1, justifyContent: 'space-between',}}>
 				<TransparentHeader title="Feature Products" />
+				
 
 				<View>
 				{/* <TextInput placeholder="Shop Medical Products" placeholderTextColor={Colors.gray} style={{
@@ -113,7 +116,9 @@ const FeatureProduct = () => {
     }}> 
 	<Feather name="search" size={22} color={primaryColor}/>
 	</TextInput> */}
+	<ActivityIndicator animating={Indicator} color={primaryColor} size={50} />
 
+<View>
 					<FlatList
 						horizontal={false}
 						numColumns={2}
@@ -185,8 +190,10 @@ const FeatureProduct = () => {
 						}}
 						data={Data}
 					/>
+					</View>
 				</View>
 				<View />
+				
 			</SafeAreaView>
 	  </>
 	);

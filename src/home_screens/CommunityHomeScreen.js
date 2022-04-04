@@ -26,7 +26,7 @@ export default class CommunityHomeScreen extends Component {
 				{
 					id: 2,
 					name: 'Offer & Promotions',
-					
+					onpress: 'Promotions',
 					image: require('../assets/images/OP.png')
 				},
 				{
